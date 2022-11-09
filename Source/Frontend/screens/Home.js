@@ -1,10 +1,16 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView, SafeAreaView } from "react-native";
 
 const HomeScreen = () => {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Home Screen</Text>
-    </View>
+    <SafeAreaView>
+      <ScrollView>
+        <View
+          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+        >
+          <Text>Home Screen</Text>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
