@@ -1,5 +1,11 @@
 import React from "react";
-import { View, ScrollView, SafeAreaView, StyleSheet } from "react-native";
+import {
+  View,
+  ScrollView,
+  SafeAreaView,
+  StyleSheet,
+  Image,
+} from "react-native";
 import {
   Card,
   Text,
@@ -13,9 +19,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  topImage: {
-    marginTop: 32,
+  tinyLogo: {
+    marginTop: 40,
     marginLeft: 20,
+    width: 23,
+    height: 25.82,
   },
 });
 
@@ -29,9 +37,7 @@ const SplashScreen = () => {
       style={{ backgroundColor: theme.colors.background, ...styles.container }}
     >
       <ScrollView>
-        <Text style={{ ...styles.topImage, color: theme.colors.primaryText }}>
-          hi
-        </Text>
+        <Image style={styles.tinyLogo} source={require("../shapes/Logo.png")} />
       </ScrollView>
     </SafeAreaView>
   );
