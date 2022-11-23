@@ -16,6 +16,8 @@ import {
   Title,
   useTheme,
 } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -61,9 +63,9 @@ const styles = StyleSheet.create({
 
 const SplashScreen = () => {
   const theme = useTheme();
-  const windowHeight = Dimensions.get("window").height;
 
-  console.log(windowHeight);
+  const navigation = useNavigation();
+
   return (
     <SafeAreaView
       style={{ backgroundColor: theme.colors.background, ...styles.container }}
@@ -94,7 +96,7 @@ const SplashScreen = () => {
           style={{ ...styles.button }}
           buttonColor={theme.colors.surface}
           onPress={() => {
-            console.log("hi");
+            navigation.navigate("LogInScreen");
           }}
           contentStyle={{ paddingVertical: 9 }}
         >

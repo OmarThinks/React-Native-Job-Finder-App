@@ -10,6 +10,8 @@ import {
   MD3LightTheme as DefaultTheme,
 } from "react-native-paper";
 
+import LogInScreen from "./screens/LogIn";
+
 const Stack = createNativeStackNavigator();
 
 const theme = {
@@ -36,6 +38,11 @@ const App = () => {
             <Stack.Screen
               name="SplashScreen"
               component={SplashScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="LogInScreen"
+              component={LogInScreen}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>
