@@ -15,7 +15,16 @@ const LogInScreen = () => {
       style={{ backgroundColor: theme.colors.background, ...styles.container }}
     >
       <ScrollView>
-        <Text>Log In</Text>
+        <Text
+          style={{
+            marginLeft: 30,
+            marginTop: 100,
+            fontSize: 30,
+            fontWeight: "700",
+          }}
+        >
+          Log In
+        </Text>
       </ScrollView>
     </SafeAreaView>
   );
