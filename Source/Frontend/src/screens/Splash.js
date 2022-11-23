@@ -87,6 +87,7 @@ const SplashScreen = () => {
         <Text
           style={{
             ...styles.secondaryText,
+            color: theme.colors.secondaryText,
           }}
         >
           Finding your dream job is more easire and faster with JobHub
