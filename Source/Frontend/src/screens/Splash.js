@@ -10,11 +10,14 @@ import {
   useTheme,
 } from "react-native-paper";
 const styles = StyleSheet.create({
-  centererView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+  container: {
     width: "100%",
+    display: "flex",
+    flexDirection: "column",
+  },
+  topImage: {
+    marginTop: 32,
+    marginLeft: 20,
   },
 });
 
@@ -24,12 +27,12 @@ const SplashScreen = () => {
   const theme = useTheme();
 
   return (
-    <SafeAreaView style={{ ...styles.centererView }}>
-      <View style={{ ...styles.centererView }}>
-        <Text style={{ fontSize: 120, color: theme.colors.primaryText }}>
-          Hi
+    <SafeAreaView>
+      <ScrollView>
+        <Text style={{ ...styles.topImage, color: theme.colors.primaryText }}>
+          hi
         </Text>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

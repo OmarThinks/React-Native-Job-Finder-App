@@ -19,10 +19,11 @@ const theme = {
     background: "#FFFFFF",
     primaryText: "#1A1D1E",
     primaryText2: "#151313",
+    buttonText: "#FFFFFF",
     secondaryText: "#6A6A6A",
     secondaryText2: "#A8A8AA",
     surface: "#4CA6A8",
-    onSurface: "#FFFFFF",
+    onSurface: "#1A1D1E",
   },
 };
 
