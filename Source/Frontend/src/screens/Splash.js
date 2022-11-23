@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     marginTop: 62,
     fontSize: 34,
     lineHeight: 44,
+    fontWeight: "600",
   },
   secondaryText: {
     paddingHorizontal: "9.3%",
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
     marginTop: 5,
     fontSize: 16,
     lineHeight: 26,
+    fontWeight: "400",
   },
   button: {
     marginVertical: 40,
@@ -57,6 +59,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 16,
     lineHeight: 21,
+    fontWeight: "400",
   },
   rightArrow: { width: 16.67, height: 10.67 },
 });
