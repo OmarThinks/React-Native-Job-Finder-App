@@ -25,6 +25,10 @@ const styles = StyleSheet.create({
     width: 23,
     height: 25.82,
   },
+  businessManDrawing: {
+    width: 472,
+    height: 378,
+  },
 });
 
 const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
@@ -37,7 +41,20 @@ const SplashScreen = () => {
       style={{ backgroundColor: theme.colors.background, ...styles.container }}
     >
       <ScrollView>
-        <Image style={styles.tinyLogo} source={require("../shapes/Logo.png")} />
+        <Image
+          style={{ ...styles.tinyLogo }}
+          source={require("../shapes/Logo.png")}
+        />
+        <Image
+          style={{
+            ...styles.businessManDrawing,
+            alignSelf: "center",
+            overflow: "hidden",
+          }}
+          source={require("../shapes/SplashScreenBusinessMan.png")}
+          resizeMode={"center"}
+        />
+        <Text>Hi</Text>
       </ScrollView>
     </SafeAreaView>
   );
