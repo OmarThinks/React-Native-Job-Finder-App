@@ -11,9 +11,7 @@ import {
 } from "react-native-paper";
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
-    display: "flex",
-    flexDirection: "column",
+    flex: 1,
   },
   topImage: {
     marginTop: 32,
@@ -27,7 +25,9 @@ const SplashScreen = () => {
   const theme = useTheme();
 
   return (
-    <SafeAreaView>
+    <SafeAreaView
+      style={{ backgroundColor: theme.colors.background, ...styles.container }}
+    >
       <ScrollView>
         <Text style={{ ...styles.topImage, color: theme.colors.primaryText }}>
           hi
