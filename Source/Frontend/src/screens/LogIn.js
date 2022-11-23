@@ -21,9 +21,25 @@ const LogInScreen = () => {
             marginTop: 100,
             fontSize: 30,
             fontWeight: "700",
+            lineHeight: 30,
+            fontStyle: "normal",
           }}
         >
-          Log In
+          Welcome Back!
+        </Text>
+
+        <Text
+          style={{
+            fontStyle: "normal",
+            fontWeight: "400",
+            fontSize: 16,
+            lineHeight: 24,
+            marginLeft: 30,
+            marginTop: 10,
+            color: theme.colors.secondaryText,
+          }}
+        >
+          Fill your details or continue with social media
         </Text>
       </ScrollView>
     </SafeAreaView>
