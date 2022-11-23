@@ -31,8 +31,6 @@ const styles = StyleSheet.create({
   },
 });
 
-const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
-
 const SplashScreen = () => {
   const theme = useTheme();
 
@@ -54,7 +52,18 @@ const SplashScreen = () => {
           source={require("../shapes/SplashScreenBusinessMan.png")}
           resizeMode={"center"}
         />
-        <Text>Hi</Text>
+        <Text
+          style={{
+            paddingHorizontal: "17%",
+            textAlign: "center",
+            width: "100%",
+            marginTop: 62,
+            fontSize: 34,
+            lineHeight: 44,
+          }}
+        >
+          Find Perfect Job Match
+        </Text>
       </ScrollView>
     </SafeAreaView>
   );
