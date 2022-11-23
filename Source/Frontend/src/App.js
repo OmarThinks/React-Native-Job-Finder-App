@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { SafeAreaView } from "react-native";
 import { store } from "./app/store";
-import HomeScreen from "./screens/Home";
+import SplashScreen from "./screens/Splash";
 import { Provider } from "react-redux";
 import {
   Provider as PaperProvider,
@@ -33,8 +33,8 @@ const App = () => {
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen
-              name="Home"
-              component={HomeScreen}
+              name="SplashScreen"
+              component={SplashScreen}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>

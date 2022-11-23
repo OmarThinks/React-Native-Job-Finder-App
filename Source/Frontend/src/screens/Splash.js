@@ -7,6 +7,7 @@ import {
   Button,
   Avatar,
   Title,
+  useTheme,
 } from "react-native-paper";
 const styles = StyleSheet.create({
   centererView: {
@@ -19,14 +20,18 @@ const styles = StyleSheet.create({
 
 const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
 
-const HomeScreen = () => {
+const SplashScreen = () => {
+  const theme = useTheme();
+
   return (
     <SafeAreaView style={{ ...styles.centererView }}>
       <View style={{ ...styles.centererView }}>
-        <Text style={{ fontSize: 120 }}>Hi</Text>
+        <Text style={{ fontSize: 120, color: theme.colors.primaryText }}>
+          Hi
+        </Text>
       </View>
     </SafeAreaView>
   );
 };
 
-export default HomeScreen;
+export default SplashScreen;
