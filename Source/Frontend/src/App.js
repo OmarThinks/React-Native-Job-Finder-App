@@ -5,14 +5,24 @@ import { SafeAreaView } from "react-native";
 import { store } from "./app/store";
 import HomeScreen from "./screens/Home";
 import { Provider } from "react-redux";
-import { Provider as PaperProvider } from "react-native-paper";
+import {
+  Provider as PaperProvider,
+  MD3LightTheme as DefaultTheme,
+} from "react-native-paper";
 
 const Stack = createNativeStackNavigator();
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+  },
+};
 
 const App = () => {
   return (
     <Provider store={store}>
-      <PaperProvider>
+      <PaperProvider theme={theme}>
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen
