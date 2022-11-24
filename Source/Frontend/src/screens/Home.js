@@ -1,9 +1,16 @@
-import { Text, useTheme } from "react-native-paper";
+import { Text, useTheme, Avatar } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
-import { SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
+import {
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  View,
+  Image,
+} from "react-native";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../features/currentUser/currentUserSlice";
 import { useEffect } from "react";
+import usersSlice from "../features/users/usersSlice";
 
 const styles = StyleSheet.create({
   container: {
@@ -17,6 +24,11 @@ const styles = StyleSheet.create({
   inputText: {
     flexGrow: 1,
     marginRight: 15,
+  },
+
+  image44: {
+    width: 44,
+    height: 44,
   },
 });
 
@@ -45,8 +57,17 @@ const HomeTab = () => {
             marginHorizontal: 20,
           }}
         >
-          <Text>Home1</Text>
-          <Text>Home2</Text>
+          <Image
+            source={require("../shapes/HomeTopLeftIcon.png")}
+            style={{ ...styles.image44 }}
+          />
+
+          <Avatar.Image
+            size={44}
+            source={{
+              uri: currentUser.image,
+            }}
+          />
         </View>
 
         <View
