@@ -13,6 +13,7 @@ import { selectCurrentUser } from "../features/currentUser/currentUserSlice";
 import { useEffect } from "react";
 import usersSlice from "../features/users/usersSlice";
 import PostCard from "../components/Card/PostCard";
+import { selectPosts } from "../features/posts/postsSlice";
 
 const styles = StyleSheet.create({
   container: {
@@ -50,6 +51,11 @@ const styles = StyleSheet.create({
 const HomeTab = () => {
   const theme = useTheme();
   const navigation = useNavigation();
+  const posts = useSelector(selectPosts);
+  console.log(posts);
+  const displayPosts = posts.map((post) => {
+    return <PostCard key={post.id} />;
+  });
 
   const currentUser = useSelector(selectCurrentUser);
 
@@ -182,9 +188,7 @@ const HomeTab = () => {
         </View>
 
         <View style={{ marginHorizontal: 20, marginTop: 20, marginBottom: 20 }}>
-          <PostCard />
-          <PostCard />
-          <PostCard />
+          {displayPosts}
         </View>
       </ScrollView>
     </SafeAreaView>
