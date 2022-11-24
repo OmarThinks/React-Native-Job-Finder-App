@@ -31,6 +31,7 @@ const CustomTextInput = ({
       mode={"flat"}
       textColor={theme.colors.onSurface}
       left={() => {}}
+      secureTextEntry={isPassword}
     />
   );
 };
