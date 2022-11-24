@@ -45,7 +45,7 @@ const JobCard = ({ job }) => {
           }}
         />
         <Image
-          source={require("../../shapes/HomeSettingsIcon.png")}
+          source={require("../../shapes/Love.png")}
           style={{
             width: 28,
             height: 28,
