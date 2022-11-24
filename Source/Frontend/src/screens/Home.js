@@ -1,4 +1,10 @@
-import { Text, useTheme, Avatar, TextInput } from "react-native-paper";
+import {
+  Text,
+  useTheme,
+  Avatar,
+  TextInput,
+  BottomNavigation,
+} from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import {
   SafeAreaView,
@@ -10,7 +16,7 @@ import {
 } from "react-native";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../features/currentUser/currentUserSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import usersSlice from "../features/users/usersSlice";
 import PostCard from "../components/Card/PostCard";
 import { selectPosts } from "../features/posts/postsSlice";
@@ -51,7 +57,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const HomeTab = () => {
+const HomeRoute = () => {
   const theme = useTheme();
   const navigation = useNavigation();
   const posts = useSelector(selectPosts);
@@ -208,8 +214,44 @@ const HomeTab = () => {
   );
 };
 
+const MessageRoute = () => <Text>Message</Text>;
+
+const ProfileRoute = () => <Text>Profile</Text>;
+
+const SettingsRoute = () => <Text>Settings</Text>;
+
 const HomeScreen = () => {
-  return <HomeTab />;
+  const [index, setIndex] = useState(0);
+  const [routes] = useState([
+    {
+      key: "home",
+      title: "Home",
+      focusedIcon: "heart",
+      unfocusedIcon: "heart-outline",
+    },
+    { key: "message", title: "Message", focusedIcon: "album" },
+    { key: "profile", title: "Profile", focusedIcon: "history" },
+    {
+      key: "settings",
+      title: "Settings",
+      focusedIcon: "bell",
+      unfocusedIcon: "bell-outline",
+    },
+  ]);
+  const renderScene = BottomNavigation.SceneMap({
+    home: HomeRoute,
+    message: MessageRoute,
+    profile: ProfileRoute,
+    settings: SettingsRoute,
+  });
+
+  return (
+    <BottomNavigation
+      navigationState={{ index, routes }}
+      onIndexChange={setIndex}
+      renderScene={renderScene}
+    />
+  );
 };
 
 export default HomeScreen;
