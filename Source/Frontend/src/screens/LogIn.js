@@ -2,6 +2,8 @@ import { useTheme, Text, TextInput } from "react-native-paper";
 import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import { useState } from "react";
 
+import CustomTextInput from "../components/CustomTextInput";
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -43,31 +45,8 @@ const LogInScreen = () => {
         >
           Fill your details or continue with social media
         </Text>
-        <TextInput
-          label="Email Adress"
-          value={text}
-          onChangeText={(text) => setText(text)}
-          style={{
-            backgroundColor: theme.colors.background,
-            borderRadius: 16,
-            marginTop: 30,
-            marginHorizontal: 20,
-            fontSize: 16,
-          }}
-          theme={{
-            ...theme,
-            roundness: 16,
-            colors: {
-              ...theme.colors,
-              primary: theme.colors.surface,
-              onSurfaceVariant: theme.colors.secondaryText,
-            },
-          }}
-          underlineStyle={{ height: 0 }}
-          mode={"flat"}
-          textColor={theme.colors.onSurface}
-          left={() => {}}
-        />
+
+        <CustomTextInput text={text} setText={setText} />
       </ScrollView>
     </SafeAreaView>
   );
