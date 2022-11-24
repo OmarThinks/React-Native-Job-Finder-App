@@ -13,10 +13,6 @@ const CustomTextInput = ({
 }) => {
   const theme = useTheme();
 
-  left = (
-    <TextInput.Icon icon={require("../shapes/Email.png")} color={() => "red"} />
-  );
-
   return (
     <TextInput
       label={label}
@@ -37,7 +33,7 @@ const CustomTextInput = ({
       mode={"flat"}
       textColor={theme.colors.onSurface}
       left={left}
-      right={left}
+      right={right}
       secureTextEntry={isPassword}
     />
   );
