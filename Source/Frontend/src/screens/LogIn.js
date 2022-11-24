@@ -1,11 +1,11 @@
-import { useTheme, Text, TextInput, HelperText } from "react-native-paper";
 import {
-  StyleSheet,
-  SafeAreaView,
-  ScrollView,
-  Image,
-  TextInput as TextIn,
-} from "react-native";
+  useTheme,
+  Text,
+  TextInput,
+  HelperText,
+  Button,
+} from "react-native-paper";
+import { StyleSheet, SafeAreaView, ScrollView, Image } from "react-native";
 import { useState } from "react";
 
 import CustomTextInput from "../components/CustomTextInput";
@@ -112,6 +112,19 @@ const LogInScreen = () => {
         >
           Forgot Password?
         </Text>
+        <Button
+          style={{ borderRadius: 12, marginHorizontal: 20, marginTop: 40 }}
+          mode="contained"
+          contentStyle={{ paddingVertical: 13 }}
+          onPress={() => {}}
+          labelStyle={{
+            fontSize: 16,
+            lineHeight: 16,
+            color: theme.colors.buttonText,
+          }}
+        >
+          LOG IN
+        </Button>
       </ScrollView>
     </SafeAreaView>
   );
