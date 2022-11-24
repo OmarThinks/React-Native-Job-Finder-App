@@ -34,6 +34,11 @@ const styles = StyleSheet.create({
     width: 54,
     height: 54,
   },
+  popularJob: {
+    fontSize: 20,
+    lineHeight: 20,
+    fontWeight: "600",
+  },
 });
 
 const HomeTab = () => {
@@ -48,6 +53,17 @@ const HomeTab = () => {
 
   //console.log("user is: ");
   //console.log(currentUser);
+
+  const userImage = currentUser ? (
+    <Avatar.Image
+      size={44}
+      source={{
+        uri: currentUser.image,
+      }}
+    />
+  ) : (
+    <></>
+  );
 
   return (
     <SafeAreaView
@@ -65,13 +81,7 @@ const HomeTab = () => {
             source={require("../shapes/HomeTopLeftIcon.png")}
             style={{ ...styles.image44 }}
           />
-
-          <Avatar.Image
-            size={44}
-            source={{
-              uri: currentUser.image,
-            }}
-          />
+          {userImage}
         </View>
 
         <View
@@ -92,7 +102,6 @@ const HomeTab = () => {
             underlineStyle={{ height: 0 }}
             textColor={theme.colors.primaryText}
           />
-
           <Image
             source={require("../shapes/HomeSettingsIcon.png")}
             style={{ ...styles.image54 }}
@@ -106,8 +115,25 @@ const HomeTab = () => {
             marginHorizontal: 20,
           }}
         >
-          <Text>Popular Jobs</Text>
-          <Text>Show All</Text>
+          <Text
+            style={{
+              ...styles.popularJob,
+              color: theme.colors.primaryText,
+            }}
+          >
+            Popular Jobs
+          </Text>
+          <Text
+            style={{
+              fontSize: 12,
+              lineHeight: 12,
+              fontWeight: "400",
+              color: theme.colors.secondaryText,
+              alignSelf: "center",
+            }}
+          >
+            Show All
+          </Text>
         </View>
 
         <View
@@ -123,13 +149,30 @@ const HomeTab = () => {
 
         <View
           style={{
-            justifyContent: "center",
-            marginTop: 20,
+            ...styles.separator,
+            marginTop: 30,
             marginHorizontal: 20,
           }}
         >
-          <Text style={{ backgroundColor: "red" }}>Popular Jobs</Text>
-          <Text>Show All</Text>
+          <Text
+            style={{
+              ...styles.popularJob,
+              color: theme.colors.primaryText,
+            }}
+          >
+            Recent Post
+          </Text>
+          <Text
+            style={{
+              fontSize: 12,
+              lineHeight: 12,
+              fontWeight: "400",
+              color: theme.colors.secondaryText,
+              alignSelf: "center",
+            }}
+          >
+            Show All
+          </Text>
         </View>
 
         <View style={{ marginHorizontal: 20, marginTop: 20, marginBottom: 20 }}>
