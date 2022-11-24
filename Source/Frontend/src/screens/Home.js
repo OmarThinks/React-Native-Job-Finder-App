@@ -54,7 +54,7 @@ const HomeTab = () => {
   const posts = useSelector(selectPosts);
   console.log(posts);
   const displayPosts = posts.map((post) => {
-    return <PostCard key={post.id} />;
+    return <PostCard key={post.id} post={post} />;
   });
 
   const currentUser = useSelector(selectCurrentUser);

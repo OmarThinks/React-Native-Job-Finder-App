@@ -11,7 +11,9 @@ import {
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
-const PostCard = ({ employerImage, employerName, title, jobType, salary }) => {
+const PostCard = ({ post }) => {
+  console.log(employerImage);
+  const { employerImage, employerName, title, jobType, salary } = post;
   const theme = useTheme();
   return (
     <View
@@ -30,8 +32,10 @@ const PostCard = ({ employerImage, employerName, title, jobType, salary }) => {
     >
       <View style={{ marginLeft: 15, marginVertical: 15 }}>
         <Image
-          source={require("../../shapes/HomeSettingsIcon.png")}
-          style={{ width: 50, height: 50 }}
+          source={{
+            uri: employerImage,
+          }}
+          style={{ width: 50, height: 50, borderRadius: 15 }}
         />
       </View>
       <View
@@ -50,7 +54,7 @@ const PostCard = ({ employerImage, employerName, title, jobType, salary }) => {
             color: theme.colors.primaryText,
           }}
         >
-          UI/UX Designer
+          {title}
         </Text>
         <Text
           style={{
@@ -60,7 +64,7 @@ const PostCard = ({ employerImage, employerName, title, jobType, salary }) => {
             color: theme.colors.secondaryText,
           }}
         >
-          Full Time
+          {jobType}
         </Text>
       </View>
       <View
@@ -68,7 +72,7 @@ const PostCard = ({ employerImage, employerName, title, jobType, salary }) => {
           marginRight: 12,
         }}
       >
-        <Text>$4500/m</Text>
+        <Text>${salary}/m</Text>
       </View>
     </View>
   );
