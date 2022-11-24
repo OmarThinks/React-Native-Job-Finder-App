@@ -46,7 +46,7 @@ const LogInScreen = () => {
           Fill your details or continue with social media
         </Text>
 
-        <CustomTextInput text={text} setText={setText} />
+        <CustomTextInput text={text} setText={setText} variant={"email"} />
       </ScrollView>
     </SafeAreaView>
   );

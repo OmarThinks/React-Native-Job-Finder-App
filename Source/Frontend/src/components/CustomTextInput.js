@@ -2,7 +2,7 @@ import { useTheme, Text, TextInput } from "react-native-paper";
 import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import { useState } from "react";
 
-const CustomTextInput = ({ text, setText }) => {
+const CustomTextInput = ({ text, setText, variant }) => {
   const theme = useTheme();
 
   return (
