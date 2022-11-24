@@ -20,6 +20,8 @@ import { validateLogin } from "../features/users/functions";
 
 import { useSelector } from "react-redux";
 import { selectUsers } from "../features/users/usersSlice";
+import { useNavigation } from "@react-navigation/native";
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -38,8 +40,9 @@ const styles = StyleSheet.create({
 
 const LogInScreen = () => {
   const users = useSelector(selectUsers);
+  const navigation = useNavigation();
 
-  console.log(validateLogin("harveyspectere@gmail.com", "12345", users));
+  //console.log(validateLogin("harveyspectere@gmail.com", "12345", users));
 
   const theme = useTheme();
   const [email, setEmail] = useState("");
@@ -86,7 +89,7 @@ const LogInScreen = () => {
       setErrorMessage("Wrong Email or Password");
       return;
     }
-    console.log("Logged in sucessfully");
+    navigation.navigate("HomeScreen");
   };
 
   return (

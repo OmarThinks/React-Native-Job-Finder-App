@@ -11,6 +11,7 @@ import {
 } from "react-native-paper";
 
 import LogInScreen from "./screens/LogIn";
+import HomeScreen from "./screens/Home";
 
 const Stack = createNativeStackNavigator();
 
@@ -47,6 +48,11 @@ const App = () => {
             <Stack.Screen
               name="LogInScreen"
               component={LogInScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="HomeScreen"
+              component={HomeScreen}
               options={{ headerShown: false }}
             />
           </Stack.Navigator>
