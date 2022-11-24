@@ -19,6 +19,7 @@ const theme = {
   colors: {
     ...DefaultTheme.colors,
     background: "#FFFFFF",
+    background2: "#FBFBFB",
     primaryText: "#1A1D1E",
     primaryText2: "#151313",
     buttonText: "#FFFFFF",

@@ -1,5 +1,6 @@
-import { useTheme, Text } from "react-native-paper";
+import { useTheme, Text, TextInput } from "react-native-paper";
 import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
+import { useState } from "react";
 
 const styles = StyleSheet.create({
   container: {
@@ -9,10 +10,11 @@ const styles = StyleSheet.create({
 
 const LogInScreen = () => {
   const theme = useTheme();
+  const [text, setText] = useState("");
 
   return (
     <SafeAreaView
-      style={{ backgroundColor: theme.colors.background, ...styles.container }}
+      style={{ backgroundColor: theme.colors.background2, ...styles.container }}
     >
       <ScrollView>
         <Text
@@ -41,6 +43,27 @@ const LogInScreen = () => {
         >
           Fill your details or continue with social media
         </Text>
+        <TextInput
+          label="aaaa"
+          value={text}
+          onChangeText={(text) => setText(text)}
+          style={{
+            backgroundColor: theme.colors.background,
+            borderRadius: 16,
+            borderWidth: 0,
+            color: "red",
+          }}
+          theme={{
+            ...theme,
+            colors: {
+              ...theme.colors,
+              primary: "red",
+              onSurfaceVariant: "blue",
+            },
+          }}
+          underlineStyle={{ height: 0 }}
+          mode={"flat"}
+        />
       </ScrollView>
     </SafeAreaView>
   );
