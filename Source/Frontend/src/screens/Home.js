@@ -15,6 +15,8 @@ import usersSlice from "../features/users/usersSlice";
 import PostCard from "../components/Card/PostCard";
 import { selectPosts } from "../features/posts/postsSlice";
 
+import JobCard from "../components/Card/JobCard";
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -158,102 +160,11 @@ const HomeTab = () => {
 
         <ScrollView
           horizontal={true}
-          style={{ marginTop: 20, paddingRight: 20, marginBottom: 15 }}
+          style={{ marginTop: 20, paddingRight: 20, paddingBottom: 15 }}
         >
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              marginLeft: 20,
-              borderRadius: 20,
-              backgroundColor: theme.colors.background,
-              width: 260,
-            }}
-          >
-            <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
-                paddingTop: 15,
-              }}
-            >
-              <Image
-                source={require("../shapes/HomeSettingsIcon.png")}
-                style={{
-                  width: 40,
-                  height: 40,
-                  marginLeft: 15,
-                  borderRadius: 13,
-                }}
-              />
-              <Image
-                source={require("../shapes/HomeSettingsIcon.png")}
-                style={{
-                  width: 28,
-                  height: 28,
-                  marginLeft: 20,
-                }}
-              />
-            </View>
-            <Text
-              style={{
-                marginTop: 5,
-                marginLeft: 13,
-                fontSize: 12,
-                lineHeight: 12,
-                fontWeight: "500",
-                color: theme.colors.secondaryText,
-              }}
-            >
-              Shopify
-            </Text>
-            <Text
-              style={{
-                marginTop: 20,
-                marginLeft: 15,
-                fontSize: 16,
-                lineHeight: 16,
-                fontWeight: "500",
-                color: theme.colors.primaryText2,
-              }}
-            >
-              Senior UI Designer
-            </Text>
-
-            <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                marginTop: 18,
-                marginLeft: 15,
-                marginBottom: 22,
-              }}
-            >
-              <Text
-                style={{
-                  color: theme.colors.primaryText2,
-                  fontSize: 12,
-                  lineHeight: 12,
-                  fontWeight: "600",
-                }}
-              >
-                $2500/m
-              </Text>
-              <Text
-                style={{
-                  color: theme.colors.secondaryText,
-                  fontSize: 12,
-                  lineHeight: 12,
-                  fontWeight: "400",
-                  marginLeft: 5,
-                }}
-              >
-                Toronto, Canada
-              </Text>
-            </View>
-          </View>
+          <JobCard />
+          <JobCard />
+          <View style={{ paddingLeft: 20 }}></View>
         </ScrollView>
 
         <View
