@@ -80,6 +80,15 @@ const LogInScreen = () => {
     setErrorMessage("");
   };
 
+  const onSubmit = () => {
+    const loginResult = validateLogin(email, password, users);
+    if (loginResult === null) {
+      setErrorMessage("Wrong Email or Password");
+      return;
+    }
+    console.log("Logged in sucessfully");
+  };
+
   return (
     <SafeAreaView
       style={{ backgroundColor: theme.colors.background2, ...styles.container }}
@@ -149,7 +158,7 @@ const LogInScreen = () => {
           style={{ borderRadius: 12, marginHorizontal: 20, marginTop: 40 }}
           mode="contained"
           contentStyle={{ paddingVertical: 13 }}
-          onPress={() => {}}
+          onPress={onSubmit}
           labelStyle={{
             fontSize: 16,
             lineHeight: 16,
