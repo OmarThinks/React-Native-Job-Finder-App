@@ -16,6 +16,7 @@ import PostCard from "../components/Card/PostCard";
 import { selectPosts } from "../features/posts/postsSlice";
 
 import JobCard from "../components/Card/JobCard";
+import { selectJobs } from "../features/jobs/jobsSlice";
 
 const styles = StyleSheet.create({
   container: {
@@ -55,11 +56,8 @@ const HomeTab = () => {
   const navigation = useNavigation();
   const posts = useSelector(selectPosts);
   console.log(posts);
-  const displayPosts = posts.map((post) => {
-    return <PostCard key={post.id} post={post} />;
-  });
-
   const currentUser = useSelector(selectCurrentUser);
+  const jobs = useSelector(selectJobs);
 
   useEffect(() => {
     if (currentUser === null) navigation.navigate("LogInScreen");
@@ -78,6 +76,14 @@ const HomeTab = () => {
   ) : (
     <></>
   );
+
+  const displayPosts = posts.map((post) => {
+    return <PostCard key={post.id} post={post} />;
+  });
+
+  const displayJobs = jobs.map((job) => {
+    return <JobCard key={job.id} job={job} />;
+  });
 
   return (
     <SafeAreaView
@@ -162,8 +168,7 @@ const HomeTab = () => {
           horizontal={true}
           style={{ marginTop: 20, paddingRight: 20, paddingBottom: 15 }}
         >
-          <JobCard />
-          <JobCard />
+          {displayJobs}
           <View style={{ paddingLeft: 20 }}></View>
         </ScrollView>
 

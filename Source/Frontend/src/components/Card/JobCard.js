@@ -11,7 +11,9 @@ import {
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
-const JobCard = () => {
+const JobCard = ({ job }) => {
+  console.log(job);
+  const { id, employerImage, employerName, title, salary, location } = job;
   const theme = useTheme();
   return (
     <View
@@ -34,7 +36,7 @@ const JobCard = () => {
         }}
       >
         <Image
-          source={require("../../shapes/HomeSettingsIcon.png")}
+          source={{ uri: employerImage }}
           style={{
             width: 40,
             height: 40,
@@ -61,7 +63,7 @@ const JobCard = () => {
           color: theme.colors.secondaryText,
         }}
       >
-        Shopify
+        {employerName}
       </Text>
       <Text
         style={{
@@ -73,7 +75,7 @@ const JobCard = () => {
           color: theme.colors.primaryText2,
         }}
       >
-        Senior UI Designer
+        {title}
       </Text>
 
       <View
@@ -93,7 +95,7 @@ const JobCard = () => {
             fontWeight: "600",
           }}
         >
-          $2500/m
+          ${salary}/m
         </Text>
         <Text
           style={{
@@ -104,7 +106,7 @@ const JobCard = () => {
             marginLeft: 5,
           }}
         >
-          Toronto, Canada
+          {location}
         </Text>
       </View>
     </View>
