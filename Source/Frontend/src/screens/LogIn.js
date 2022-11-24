@@ -151,8 +151,14 @@ const LogInScreen = () => {
             marginTop: 30,
           }}
         >
-          <Text>Text1</Text>
-          <Text>Text2</Text>
+          <Image
+            style={{ width: 60, height: 60 }}
+            source={require("../shapes/Google.png")}
+          />
+          <Image
+            style={{ width: 60, height: 60, marginLeft: 20 }}
+            source={require("../shapes/Facebook.png")}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
