@@ -20,11 +20,6 @@ const CustomTextInput = ({ text, setText }) => {
       theme={{
         ...theme,
         roundness: 16,
-        colors: {
-          ...theme.colors,
-          primary: theme.colors.surface,
-          onSurfaceVariant: theme.colors.secondaryText,
-        },
       }}
       underlineStyle={{ height: 0 }}
       mode={"flat"}
