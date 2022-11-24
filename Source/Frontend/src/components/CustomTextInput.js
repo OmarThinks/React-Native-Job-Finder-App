@@ -2,18 +2,24 @@ import { useTheme, Text, TextInput } from "react-native-paper";
 import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
 import { useState } from "react";
 
-const CustomTextInput = ({ text, setText, variant }) => {
+const CustomTextInput = ({
+  text,
+  setText,
+  isPassword = false,
+  marginTop,
+  label,
+}) => {
   const theme = useTheme();
 
   return (
     <TextInput
-      label="Email Adress"
+      label={label}
       value={text}
       onChangeText={(text) => setText(text)}
       style={{
         backgroundColor: theme.colors.background,
         borderRadius: 16,
-        marginTop: 30,
+        marginTop,
         marginHorizontal: 20,
         fontSize: 16,
       }}

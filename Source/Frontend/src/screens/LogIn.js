@@ -47,11 +47,18 @@ const LogInScreen = () => {
           Fill your details or continue with social media
         </Text>
 
-        <CustomTextInput text={email} setText={setEmail} variant={"email"} />
+        <CustomTextInput
+          text={email}
+          setText={setEmail}
+          marginTop={30}
+          label={"Email Adress"}
+        />
         <CustomTextInput
           text={password}
           setText={setPassword}
-          variant={"password"}
+          isPassword={true}
+          marginTop={24}
+          label={"Password"}
         />
       </ScrollView>
     </SafeAreaView>
