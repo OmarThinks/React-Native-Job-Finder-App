@@ -125,6 +125,17 @@ const LogInScreen = () => {
         >
           LOG IN
         </Button>
+        <Text
+          style={{
+            textAlign: "center",
+            fontSize: 16,
+            lineHeight: 16,
+            color: theme.colors.secondaryText,
+            marginTop: 40,
+          }}
+        >
+          Or Continue with{" "}
+        </Text>
       </ScrollView>
     </SafeAreaView>
   );
