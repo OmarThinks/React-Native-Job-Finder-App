@@ -154,10 +154,46 @@ const HomeTab = () => {
             marginTop: 20,
             marginLeft: 20,
           }}
+        ></View>
+
+        <ScrollView
+          horizontal={true}
+          style={{ marginTop: 20, paddingRight: 20 }}
         >
-          <Text>Horizontal List</Text>
-          <Text>Horizontal List</Text>
-        </View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              marginLeft: 20,
+              borderRadius: 20,
+              backgroundColor: theme.colors.background,
+              width: 260,
+            }}
+          >
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+                paddingTop: 15,
+              }}
+            >
+              <Image
+                source={require("../shapes/HomeSettingsIcon.png")}
+                style={{ width: 40, height: 40, marginLeft: 15 }}
+              />
+              <Image
+                source={require("../shapes/HomeSettingsIcon.png")}
+                style={{ width: 28, height: 28, marginLeft: 20 }}
+              />
+            </View>
+            <Text>Hi</Text>
+            <Text>Hi</Text>
+            <Text>Hi</Text>
+            <Text>Hi</Text>
+          </View>
+        </ScrollView>
 
         <View
           style={{
