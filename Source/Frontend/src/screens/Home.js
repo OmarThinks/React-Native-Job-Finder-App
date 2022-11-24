@@ -55,6 +55,7 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     fontWeight: "600",
   },
+  navBarIcon: { width: 19, height: 20 },
 });
 
 const HomeRoute = () => {
@@ -222,20 +223,103 @@ const SettingsRoute = () => <Text>Settings</Text>;
 
 const HomeScreen = () => {
   const [index, setIndex] = useState(0);
+
+  const HomeActive = () => {
+    return (
+      <Image
+        source={require("../shapes/NavBar/HomeActive.png")}
+        style={{ ...styles.navBarIcon }}
+      />
+    );
+  };
+
+  const HomeIdle = () => {
+    return (
+      <Image
+        source={require("../shapes/NavBar/HomeIdle.png")}
+        style={{ ...styles.navBarIcon }}
+      />
+    );
+  };
+
+  const ChatActive = () => {
+    return (
+      <Image
+        source={require("../shapes/NavBar/ChatActive.png")}
+        style={{ ...styles.navBarIcon }}
+      />
+    );
+  };
+
+  const ChatIdle = () => {
+    return (
+      <Image
+        source={require("../shapes/NavBar/ChatIdle.png")}
+        style={{ ...styles.navBarIcon }}
+      />
+    );
+  };
+
+  const ProfileActive = () => {
+    return (
+      <Image
+        source={require("../shapes/NavBar/ProfileActive.png")}
+        style={{ ...styles.navBarIcon }}
+      />
+    );
+  };
+
+  const ProfileIdle = () => {
+    return (
+      <Image
+        source={require("../shapes/NavBar/ProfileIdle.png")}
+        style={{ ...styles.navBarIcon }}
+      />
+    );
+  };
+
+  const SettingActive = () => {
+    return (
+      <Image
+        source={require("../shapes/NavBar/SettingActive.png")}
+        style={{ ...styles.navBarIcon }}
+      />
+    );
+  };
+
+  const SettingIdle = () => {
+    return (
+      <Image
+        source={require("../shapes/NavBar/SettingIdle.png")}
+        style={{ ...styles.navBarIcon }}
+      />
+    );
+  };
+
   const [routes] = useState([
     {
       key: "home",
       title: "Home",
-      focusedIcon: "heart",
-      unfocusedIcon: "heart-outline",
+      focusedIcon: HomeActive,
+      unfocusedIcon: HomeIdle,
     },
-    { key: "message", title: "Message", focusedIcon: "album" },
-    { key: "profile", title: "Profile", focusedIcon: "history" },
+    {
+      key: "message",
+      title: "Message",
+      focusedIcon: ChatActive,
+      unfocusedIcon: ChatIdle,
+    },
+    {
+      key: "profile",
+      title: "Profile",
+      focusedIcon: ProfileActive,
+      unfocusedIcon: ProfileIdle,
+    },
     {
       key: "settings",
       title: "Settings",
-      focusedIcon: "bell",
-      unfocusedIcon: "bell-outline",
+      focusedIcon: SettingActive,
+      unfocusedIcon: SettingIdle,
     },
   ]);
   const renderScene = BottomNavigation.SceneMap({
