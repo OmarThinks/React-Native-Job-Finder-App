@@ -1,4 +1,4 @@
-import { Text, useTheme, Avatar } from "react-native-paper";
+import { Text, useTheme, Avatar, TextInput } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import {
   SafeAreaView,
@@ -30,6 +30,10 @@ const styles = StyleSheet.create({
     width: 44,
     height: 44,
   },
+  image54: {
+    width: 54,
+    height: 54,
+  },
 });
 
 const HomeTab = () => {
@@ -42,8 +46,8 @@ const HomeTab = () => {
     if (currentUser === null) navigation.navigate("LogInScreen");
   }, []);
 
-  console.log("user is: ");
-  console.log(currentUser);
+  //console.log("user is: ");
+  //console.log(currentUser);
 
   return (
     <SafeAreaView
@@ -77,8 +81,22 @@ const HomeTab = () => {
             marginHorizontal: 20,
           }}
         >
-          <Text style={{ ...styles.inputText }}>Search Here</Text>
-          <Text>Home2</Text>
+          <TextInput
+            label={"Search Here ..."}
+            style={{
+              ...styles.inputText,
+              backgroundColor: theme.colors.background,
+              borderRadius: 15,
+            }}
+            theme={{ ...theme, roundness: 15 }}
+            underlineStyle={{ height: 0 }}
+            textColor={theme.colors.primaryText}
+          />
+
+          <Image
+            source={require("../shapes/HomeSettingsIcon.png")}
+            style={{ ...styles.image54 }}
+          />
         </View>
 
         <View
