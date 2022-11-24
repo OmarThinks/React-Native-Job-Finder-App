@@ -1,4 +1,4 @@
-import { useTheme, Text, TextInput } from "react-native-paper";
+import { useTheme, Text, TextInput, HelperText } from "react-native-paper";
 import {
   StyleSheet,
   SafeAreaView,
@@ -20,8 +20,8 @@ const LogInScreen = () => {
   const theme = useTheme();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const EmailImage = <TextInput.Icon icon={require("../shapes/Email.png")} />;
 
@@ -78,6 +78,7 @@ const LogInScreen = () => {
           marginTop={30}
           label={"Email Adress"}
           left={EmailImage}
+          error={errorMessage}
         />
         <CustomTextInput
           text={password}
@@ -87,7 +88,16 @@ const LogInScreen = () => {
           label={"Password"}
           left={PasswordImage}
           right={CanSeePassword}
+          error={errorMessage}
         />
+
+        <HelperText
+          type="error"
+          visible={errorMessage}
+          style={{ marginLeft: 30 }}
+        >
+          errorMessage
+        </HelperText>
       </ScrollView>
     </SafeAreaView>
   );

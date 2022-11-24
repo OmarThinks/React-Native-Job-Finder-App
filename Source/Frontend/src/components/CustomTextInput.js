@@ -1,5 +1,5 @@
-import { useTheme, Text, TextInput } from "react-native-paper";
-import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
+import { useTheme, Text, TextInput, HelperText } from "react-native-paper";
+import { StyleSheet, SafeAreaView, ScrollView, View } from "react-native";
 import { useState } from "react";
 
 const CustomTextInput = ({
@@ -10,6 +10,7 @@ const CustomTextInput = ({
   label,
   left,
   right = null,
+  error = null,
 }) => {
   const theme = useTheme();
 
@@ -35,6 +36,7 @@ const CustomTextInput = ({
       left={left}
       right={right}
       secureTextEntry={isPassword}
+      error={error}
     />
   );
 };
