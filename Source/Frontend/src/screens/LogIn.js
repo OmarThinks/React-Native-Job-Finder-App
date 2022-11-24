@@ -52,6 +52,7 @@ const LogInScreen = () => {
           setText={setEmail}
           marginTop={30}
           label={"Email Adress"}
+          left={null}
         />
         <CustomTextInput
           text={password}
@@ -59,6 +60,8 @@ const LogInScreen = () => {
           isPassword={true}
           marginTop={24}
           label={"Password"}
+          left={null}
+          right={null}
         />
       </ScrollView>
     </SafeAreaView>

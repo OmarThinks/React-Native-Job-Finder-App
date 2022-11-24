@@ -8,6 +8,8 @@ const CustomTextInput = ({
   isPassword = false,
   marginTop,
   label,
+  left = null,
+  right = null,
 }) => {
   const theme = useTheme();
 
@@ -30,7 +32,8 @@ const CustomTextInput = ({
       underlineStyle={{ height: 0 }}
       mode={"flat"}
       textColor={theme.colors.onSurface}
-      left={() => {}}
+      left={left}
+      right={right}
       secureTextEntry={isPassword}
     />
   );
