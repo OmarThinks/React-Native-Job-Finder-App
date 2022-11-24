@@ -44,25 +44,29 @@ const LogInScreen = () => {
           Fill your details or continue with social media
         </Text>
         <TextInput
-          label="aaaa"
+          label="Email Adress"
           value={text}
           onChangeText={(text) => setText(text)}
           style={{
             backgroundColor: theme.colors.background,
             borderRadius: 16,
-            borderWidth: 0,
-            color: "red",
+            marginTop: 30,
+            marginHorizontal: 20,
+            fontSize: 16,
           }}
           theme={{
             ...theme,
+            roundness: 16,
             colors: {
               ...theme.colors,
-              primary: "red",
-              onSurfaceVariant: "blue",
+              primary: theme.colors.surface,
+              onSurfaceVariant: theme.colors.secondaryText,
             },
           }}
           underlineStyle={{ height: 0 }}
           mode={"flat"}
+          textColor={theme.colors.onSurface}
+          left={() => {}}
         />
       </ScrollView>
     </SafeAreaView>
