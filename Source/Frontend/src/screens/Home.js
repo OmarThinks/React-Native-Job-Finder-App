@@ -158,7 +158,7 @@ const HomeTab = () => {
 
         <ScrollView
           horizontal={true}
-          style={{ marginTop: 20, paddingRight: 20 }}
+          style={{ marginTop: 20, paddingRight: 20, marginBottom: 15 }}
         >
           <View
             style={{
@@ -181,24 +181,85 @@ const HomeTab = () => {
             >
               <Image
                 source={require("../shapes/HomeSettingsIcon.png")}
-                style={{ width: 40, height: 40, marginLeft: 15 }}
+                style={{
+                  width: 40,
+                  height: 40,
+                  marginLeft: 15,
+                  borderRadius: 13,
+                }}
               />
               <Image
                 source={require("../shapes/HomeSettingsIcon.png")}
-                style={{ width: 28, height: 28, marginLeft: 20 }}
+                style={{
+                  width: 28,
+                  height: 28,
+                  marginLeft: 20,
+                }}
               />
             </View>
-            <Text>Hi</Text>
-            <Text>Hi</Text>
-            <Text>Hi</Text>
-            <Text>Hi</Text>
+            <Text
+              style={{
+                marginTop: 5,
+                marginLeft: 13,
+                fontSize: 12,
+                lineHeight: 12,
+                fontWeight: "500",
+                color: theme.colors.secondaryText,
+              }}
+            >
+              Shopify
+            </Text>
+            <Text
+              style={{
+                marginTop: 20,
+                marginLeft: 15,
+                fontSize: 16,
+                lineHeight: 16,
+                fontWeight: "500",
+                color: theme.colors.primaryText2,
+              }}
+            >
+              Senior UI Designer
+            </Text>
+
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                marginTop: 18,
+                marginLeft: 15,
+                marginBottom: 22,
+              }}
+            >
+              <Text
+                style={{
+                  color: theme.colors.primaryText2,
+                  fontSize: 12,
+                  lineHeight: 12,
+                  fontWeight: "600",
+                }}
+              >
+                $2500/m
+              </Text>
+              <Text
+                style={{
+                  color: theme.colors.secondaryText,
+                  fontSize: 12,
+                  lineHeight: 12,
+                  fontWeight: "400",
+                  marginLeft: 5,
+                }}
+              >
+                Toronto, Canada
+              </Text>
+            </View>
           </View>
         </ScrollView>
 
         <View
           style={{
             ...styles.separator,
-            marginTop: 30,
+            marginTop: 15,
             marginHorizontal: 20,
           }}
         >
