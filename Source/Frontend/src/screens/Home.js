@@ -1,6 +1,9 @@
 import { Text, useTheme } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import { SafeAreaView, ScrollView, StyleSheet, View } from "react-native";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../features/currentUser/currentUserSlice";
+import { useEffect } from "react";
 
 const styles = StyleSheet.create({
   container: {
@@ -10,6 +13,16 @@ const styles = StyleSheet.create({
 
 const HomeScreen = () => {
   const theme = useTheme();
+  const navigation = useNavigation();
+
+  const currentUser = useSelector(selectCurrentUser);
+
+  useEffect(() => {
+    if (currentUser === null) navigation.navigate("LogInScreen");
+  }, []);
+
+  console.log("user is: ");
+  console.log(currentUser);
 
   return (
     <SafeAreaView

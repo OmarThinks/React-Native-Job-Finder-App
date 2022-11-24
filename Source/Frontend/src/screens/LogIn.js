@@ -21,6 +21,8 @@ import { validateLogin } from "../features/users/functions";
 import { useSelector } from "react-redux";
 import { selectUsers } from "../features/users/usersSlice";
 import { useNavigation } from "@react-navigation/native";
+import { useDispatch } from "react-redux";
+import { update as updateCurrentUser } from "../features/currentUser/currentUserSlice";
 
 const styles = StyleSheet.create({
   container: {
@@ -41,6 +43,7 @@ const styles = StyleSheet.create({
 const LogInScreen = () => {
   const users = useSelector(selectUsers);
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   //console.log(validateLogin("harveyspectere@gmail.com", "12345", users));
 
@@ -89,6 +92,7 @@ const LogInScreen = () => {
       setErrorMessage("Wrong Email or Password");
       return;
     }
+    dispatch(updateCurrentUser(loginResult));
     navigation.navigate("HomeScreen");
   };
 
