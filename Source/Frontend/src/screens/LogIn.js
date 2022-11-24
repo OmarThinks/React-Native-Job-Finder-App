@@ -5,7 +5,13 @@ import {
   HelperText,
   Button,
 } from "react-native-paper";
-import { StyleSheet, SafeAreaView, ScrollView, Image } from "react-native";
+import {
+  StyleSheet,
+  SafeAreaView,
+  ScrollView,
+  Image,
+  View,
+} from "react-native";
 import { useState } from "react";
 
 import CustomTextInput from "../components/CustomTextInput";
@@ -136,6 +142,18 @@ const LogInScreen = () => {
         >
           Or Continue with{" "}
         </Text>
+        <View
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            marginTop: 30,
+          }}
+        >
+          <Text>Text1</Text>
+          <Text>Text2</Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
