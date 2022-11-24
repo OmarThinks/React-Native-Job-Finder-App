@@ -21,7 +21,7 @@ const LogInScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [secureTextEntry, setSecureTextEntry] = useState(true);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const EmailImage = <TextInput.Icon icon={require("../shapes/Email.png")} />;
 
@@ -31,8 +31,14 @@ const LogInScreen = () => {
       style={{ borderRadius: 0 }}
     />
   );
-
-  const element = <TextInput.Icon name="lock-outline" color={() => "red"} />;
+  const CanSeePassword = (
+    <TextInput.Icon
+      icon={!isPasswordVisible ? "eye" : "eye-off"}
+      style={{ borderRadius: 0 }}
+      onPress={() => setIsPasswordVisible(!isPasswordVisible)}
+      color={() => theme.colors.secondaryText}
+    />
+  );
 
   return (
     <SafeAreaView
@@ -76,11 +82,11 @@ const LogInScreen = () => {
         <CustomTextInput
           text={password}
           setText={setPassword}
-          isPassword={true}
+          isPassword={!isPasswordVisible}
           marginTop={24}
           label={"Password"}
           left={PasswordImage}
-          right={null}
+          right={CanSeePassword}
         />
       </ScrollView>
     </SafeAreaView>
