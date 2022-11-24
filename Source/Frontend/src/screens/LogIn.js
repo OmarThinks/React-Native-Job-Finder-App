@@ -71,6 +71,15 @@ const LogInScreen = () => {
     <></>
   );
 
+  const onChangeEmail = (text) => {
+    setEmail(text);
+    setErrorMessage("");
+  };
+  const onChangePassword = (text) => {
+    setPassword(text);
+    setErrorMessage("");
+  };
+
   return (
     <SafeAreaView
       style={{ backgroundColor: theme.colors.background2, ...styles.container }}
@@ -105,7 +114,7 @@ const LogInScreen = () => {
 
         <CustomTextInput
           text={email}
-          setText={setEmail}
+          onChangeText={onChangeEmail}
           marginTop={30}
           label={"Email Adress"}
           left={EmailImage}
@@ -113,7 +122,7 @@ const LogInScreen = () => {
         />
         <CustomTextInput
           text={password}
-          setText={setPassword}
+          onChangeText={onChangePassword}
           isPassword={!isPasswordVisible}
           marginTop={24}
           label={"Password"}

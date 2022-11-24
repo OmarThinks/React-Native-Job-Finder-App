@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const CustomTextInput = ({
   text,
-  setText,
+  onChangeText,
   isPassword = false,
   marginTop,
   label,
@@ -18,7 +18,7 @@ const CustomTextInput = ({
     <TextInput
       label={label}
       value={text}
-      onChangeText={(text) => setText(text)}
+      onChangeText={onChangeText}
       style={{
         backgroundColor: theme.colors.background,
         borderRadius: 16,
