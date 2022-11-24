@@ -4,6 +4,7 @@ import {
   Avatar,
   TextInput,
   BottomNavigation,
+  MD3LightTheme,
 } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import {
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     fontWeight: "600",
   },
-  navBarIcon: { width: 19, height: 20 },
+  navBarIcon: { width: 19, height: 20, backgroundColor: "transparent" },
 });
 
 const HomeRoute = () => {
@@ -229,6 +230,7 @@ const HomeScreen = () => {
       <Image
         source={require("../shapes/NavBar/HomeActive.png")}
         style={{ ...styles.navBarIcon }}
+        resizeMode="contain"
       />
     );
   };
@@ -247,6 +249,7 @@ const HomeScreen = () => {
       <Image
         source={require("../shapes/NavBar/ChatActive.png")}
         style={{ ...styles.navBarIcon }}
+        resizeMode="contain"
       />
     );
   };
@@ -256,6 +259,7 @@ const HomeScreen = () => {
       <Image
         source={require("../shapes/NavBar/ChatIdle.png")}
         style={{ ...styles.navBarIcon }}
+        resizeMode="contain"
       />
     );
   };
@@ -265,6 +269,7 @@ const HomeScreen = () => {
       <Image
         source={require("../shapes/NavBar/ProfileActive.png")}
         style={{ ...styles.navBarIcon }}
+        resizeMode="contain"
       />
     );
   };
@@ -274,6 +279,7 @@ const HomeScreen = () => {
       <Image
         source={require("../shapes/NavBar/ProfileIdle.png")}
         style={{ ...styles.navBarIcon }}
+        resizeMode="contain"
       />
     );
   };
@@ -283,15 +289,25 @@ const HomeScreen = () => {
       <Image
         source={require("../shapes/NavBar/SettingActive.png")}
         style={{ ...styles.navBarIcon }}
+        resizeMode="contain"
       />
     );
   };
+
+  /*
+
+      <Image
+        source={require("../shapes/NavBar/SettingActive.png")}
+        style={{ ...styles.navBarIcon }}
+        resizeMode="contain"
+      />*/
 
   const SettingIdle = () => {
     return (
       <Image
         source={require("../shapes/NavBar/SettingIdle.png")}
         style={{ ...styles.navBarIcon }}
+        resizeMode="contain"
       />
     );
   };
@@ -302,24 +318,28 @@ const HomeScreen = () => {
       title: "Home",
       focusedIcon: HomeActive,
       unfocusedIcon: HomeIdle,
+      badge: false,
     },
     {
       key: "message",
       title: "Message",
       focusedIcon: ChatActive,
       unfocusedIcon: ChatIdle,
+      badge: false,
     },
     {
       key: "profile",
       title: "Profile",
       focusedIcon: ProfileActive,
       unfocusedIcon: ProfileIdle,
+      badge: false,
     },
     {
       key: "settings",
       title: "Settings",
       focusedIcon: SettingActive,
       unfocusedIcon: SettingIdle,
+      badge: false,
     },
   ]);
   const renderScene = BottomNavigation.SceneMap({
@@ -328,12 +348,21 @@ const HomeScreen = () => {
     profile: ProfileRoute,
     settings: SettingsRoute,
   });
+  const theme = useTheme();
 
   return (
     <BottomNavigation
       navigationState={{ index, routes }}
       onIndexChange={setIndex}
       renderScene={renderScene}
+      barStyle={{ backgroundColor: theme.colors.background }}
+      theme={{
+        ...theme,
+        colors: {
+          ...theme.colors,
+          secondaryContainer: theme.colors.background,
+        },
+      }}
     />
   );
 };
