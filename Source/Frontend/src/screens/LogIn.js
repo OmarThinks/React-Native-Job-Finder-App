@@ -20,6 +20,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  ceterverView: {
+    width: "100%",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  alternativeLogin: {
+    width: 60,
+    height: 60,
+  },
 });
 
 const LogInScreen = () => {
@@ -127,6 +137,7 @@ const LogInScreen = () => {
             fontSize: 16,
             lineHeight: 16,
             color: theme.colors.buttonText,
+            fontWeight: "500",
           }}
         >
           LOG IN
@@ -138,27 +149,50 @@ const LogInScreen = () => {
             lineHeight: 16,
             color: theme.colors.secondaryText,
             marginTop: 40,
+            fontWeight: "400",
           }}
         >
-          Or Continue with{" "}
+          Or Continue with
         </Text>
         <View
           style={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
+            ...styles.ceterverView,
             marginTop: 30,
           }}
         >
           <Image
-            style={{ width: 60, height: 60 }}
+            style={{ ...styles.alternativeLogin }}
             source={require("../shapes/Google.png")}
           />
           <Image
-            style={{ width: 60, height: 60, marginLeft: 20 }}
+            style={{ ...styles.alternativeLogin, marginLeft: 20 }}
             source={require("../shapes/Facebook.png")}
           />
+        </View>
+
+        <View
+          style={{ ...styles.ceterverView, marginTop: 40, marginBottom: 70 }}
+        >
+          <Text
+            style={{
+              fontSize: 16,
+              lineHeight: 26,
+              color: theme.colors.secondaryText,
+              fontWeight: "500",
+            }}
+          >
+            New User?
+          </Text>
+          <Text
+            style={{
+              fontSize: 16,
+              lineHeight: 26,
+              fontWeight: "500",
+              marginLeft: 7,
+            }}
+          >
+            Create Account
+          </Text>
         </View>
       </ScrollView>
     </SafeAreaView>
