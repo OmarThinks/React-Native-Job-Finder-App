@@ -9,9 +9,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  separator: {
+    display: "flex",
+    justifyContent: "space-between",
+    flexDirection: "row",
+  },
+  inputText: {
+    flexGrow: 1,
+    marginRight: 15,
+  },
 });
 
-const HomeScreen = () => {
+const HomeTab = () => {
   const theme = useTheme();
   const navigation = useNavigation();
 
@@ -31,9 +40,7 @@ const HomeScreen = () => {
       <ScrollView>
         <View
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            flexDirection: "row",
+            ...styles.separator,
             marginTop: 40,
             marginHorizontal: 20,
           }}
@@ -41,9 +48,62 @@ const HomeScreen = () => {
           <Text>Home1</Text>
           <Text>Home2</Text>
         </View>
+
+        <View
+          style={{
+            ...styles.separator,
+            marginTop: 30,
+            marginHorizontal: 20,
+          }}
+        >
+          <Text style={{ ...styles.inputText }}>Search Here</Text>
+          <Text>Home2</Text>
+        </View>
+
+        <View
+          style={{
+            ...styles.separator,
+            marginTop: 30,
+            marginHorizontal: 20,
+          }}
+        >
+          <Text>Popular Jobs</Text>
+          <Text>Show All</Text>
+        </View>
+
+        <View
+          style={{
+            ...styles.separator,
+            marginTop: 20,
+            marginLeft: 20,
+          }}
+        >
+          <Text>Horizontal List</Text>
+          <Text>Horizontal List</Text>
+        </View>
+
+        <View
+          style={{
+            justifyContent: "center",
+            marginTop: 20,
+            marginHorizontal: 20,
+          }}
+        >
+          <Text style={{ backgroundColor: "red" }}>Popular Jobs</Text>
+          <Text>Show All</Text>
+        </View>
+
+        <View style={{ marginHorizontal: 20, marginTop: 20, marginBottom: 20 }}>
+          <Text style={{ backgroundColor: "red" }}>T1</Text>
+          <Text>T2</Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
+};
+
+const HomeScreen = () => {
+  return <HomeTab />;
 };
 
 export default HomeScreen;
