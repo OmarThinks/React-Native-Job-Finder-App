@@ -39,6 +39,13 @@ const LogInScreen = () => {
       color={() => theme.colors.secondaryText}
     />
   );
+  const helperText = errorMessage ? (
+    <HelperText type="error" visible={errorMessage} style={{ marginLeft: 30 }}>
+      {errorMessage}
+    </HelperText>
+  ) : (
+    <></>
+  );
 
   return (
     <SafeAreaView
@@ -91,13 +98,20 @@ const LogInScreen = () => {
           error={errorMessage}
         />
 
-        <HelperText
-          type="error"
-          visible={errorMessage}
-          style={{ marginLeft: 30 }}
+        {helperText}
+
+        <Text
+          style={{
+            fontSize: 12,
+            lineHeight: 12,
+            textAlign: "right",
+            marginRight: 20,
+            marginTop: 10,
+            color: theme.colors.secondaryText,
+          }}
         >
-          errorMessage
-        </HelperText>
+          Forgot Password?
+        </Text>
       </ScrollView>
     </SafeAreaView>
   );

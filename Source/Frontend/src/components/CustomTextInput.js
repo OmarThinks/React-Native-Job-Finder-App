@@ -25,6 +25,7 @@ const CustomTextInput = ({
         marginTop,
         marginHorizontal: 20,
         fontSize: 16,
+        marginBottom: 0,
       }}
       theme={{
         ...theme,
