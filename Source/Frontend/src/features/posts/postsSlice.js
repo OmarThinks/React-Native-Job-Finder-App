@@ -58,6 +58,6 @@ export const postsSlice = createSlice({
   initialState,
 });
 
-export const selectCount = (state) => state.posts.value;
+export const selectPosts = (state) => state.posts.value;
 
 export default postsSlice.reducer;

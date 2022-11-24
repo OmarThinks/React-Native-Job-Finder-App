@@ -38,6 +38,6 @@ export const usersSlice = createSlice({
   initialState,
 });
 
-export const selectCount = (state) => state.users.value;
+export const selectUsers = (state) => state.users.value;
 
 export default usersSlice.reducer;

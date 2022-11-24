@@ -28,6 +28,6 @@ export const jobsInfoSlice = createSlice({
   initialState,
 });
 
-export const selectCount = (state) => state.jobsInfo.value;
+export const selectJobsInfo = (state) => state.jobsInfo.value;
 
 export default jobsInfoSlice.reducer;

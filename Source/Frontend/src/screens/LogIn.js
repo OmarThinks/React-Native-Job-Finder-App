@@ -16,6 +16,10 @@ import { useState } from "react";
 
 import CustomTextInput from "../components/CustomTextInput";
 
+import { validateLogin } from "../features/users/functions";
+
+import { useSelector } from "react-redux";
+import { selectUsers } from "../features/users/usersSlice";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -33,6 +37,10 @@ const styles = StyleSheet.create({
 });
 
 const LogInScreen = () => {
+  const users = useSelector(selectUsers);
+
+  console.log(validateLogin("harveyspectere@gmail.com", "12345", users));
+
   const theme = useTheme();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
