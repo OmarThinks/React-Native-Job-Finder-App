@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../features/currentUser/currentUserSlice";
 import { useEffect } from "react";
 import usersSlice from "../features/users/usersSlice";
+import PostCard from "../components/Card/PostCard";
 
 const styles = StyleSheet.create({
   container: {
@@ -181,63 +182,9 @@ const HomeTab = () => {
         </View>
 
         <View style={{ marginHorizontal: 20, marginTop: 20, marginBottom: 20 }}>
-          <View
-            style={{
-              width: "100%",
-              backgroundColor: theme.colors.background,
-              //backgroundColor: "red",
-              borderRadius: 20,
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              shadowColor: "rgb(64, 59, 75)",
-              shadowOpacity: 0.1,
-              shadowOffset: "0px 10px 35px -10px",
-            }}
-          >
-            <View style={{ marginLeft: 15, marginVertical: 15 }}>
-              <Image
-                source={require("../shapes/HomeSettingsIcon.png")}
-                style={{ ...styles.image50 }}
-              />
-            </View>
-            <View
-              style={{
-                flexGrow: 1,
-                marginLeft: 20,
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <Text
-                style={{
-                  fontSize: 16,
-                  lineHeight: 16,
-                  fontWeight: "600",
-                  color: theme.colors.primaryText,
-                }}
-              >
-                UI/UX Designer
-              </Text>
-              <Text
-                style={{
-                  fontSize: 12,
-                  lineHeight: 12,
-                  fontWeight: "400",
-                  color: theme.colors.secondaryText,
-                }}
-              >
-                Full Time
-              </Text>
-            </View>
-            <View
-              style={{
-                marginRight: 12,
-              }}
-            >
-              <Text>$4500/m</Text>
-            </View>
-          </View>
+          <PostCard />
+          <PostCard />
+          <PostCard />
         </View>
       </ScrollView>
     </SafeAreaView>
