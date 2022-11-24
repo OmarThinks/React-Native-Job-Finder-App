@@ -39,7 +39,7 @@ const App = () => {
     <Provider store={store}>
       <PaperProvider theme={theme}>
         <NavigationContainer>
-          <Stack.Navigator>
+          <Stack.Navigator initialRouteName="HomeScreen">
             <Stack.Screen
               name="SplashScreen"
               component={SplashScreen}
