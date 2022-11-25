@@ -4,9 +4,11 @@ import ActionSheet, {
   SheetProps,
   registerSheet,
 } from "react-native-actions-sheet";
+import { View, Text } from "react-native";
 
 function MySheet(props) {
-  //console.log(props);
+  console.log("sheetProps");
+  console.log(props);
   return (
     <ActionSheet id={props.sheetId}>
       <View>

@@ -39,27 +39,29 @@ const theme = {
 const App = () => {
   return (
     <Provider store={store}>
-      <PaperProvider theme={theme}>
-        <NavigationContainer>
-          <Stack.Navigator initialRouteName="HomeScreen">
-            <Stack.Screen
-              name="SplashScreen"
-              component={SplashScreen}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="LogInScreen"
-              component={LogInScreen}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="HomeScreen"
-              component={HomeScreen}
-              options={{ headerShown: false }}
-            />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </PaperProvider>
+      <SheetProvider>
+        <PaperProvider theme={theme}>
+          <NavigationContainer>
+            <Stack.Navigator initialRouteName="HomeScreen">
+              <Stack.Screen
+                name="SplashScreen"
+                component={SplashScreen}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="LogInScreen"
+                component={LogInScreen}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="HomeScreen"
+                component={HomeScreen}
+                options={{ headerShown: false }}
+              />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </PaperProvider>
+      </SheetProvider>
     </Provider>
   );
 };

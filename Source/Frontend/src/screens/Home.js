@@ -5,6 +5,7 @@ import {
   TextInput,
   BottomNavigation,
   MD3LightTheme,
+  Button,
 } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import {
@@ -24,6 +25,8 @@ import { selectPosts } from "../features/posts/postsSlice";
 
 import JobCard from "../components/Card/JobCard";
 import { selectJobs } from "../features/jobs/jobsSlice";
+
+import { SheetManager } from "react-native-actions-sheet";
 
 const styles = StyleSheet.create({
   container: {
@@ -268,6 +271,13 @@ const SettingsRoute = () => {
       <Text style={{ fontSize: 40 }}>Message</Text>
       <SettingActive size={80} />
       <SettingIdle size={80} />
+      <Button
+        onPress={() => {
+          SheetManager.show("mysheet", { value: "data" });
+        }}
+      >
+        Hi
+      </Button>
     </View>
   );
 };
