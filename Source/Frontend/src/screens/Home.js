@@ -76,10 +76,11 @@ const HomeRoute = () => {
   const currentUser = useSelector(selectCurrentUser);
   const jobs = useSelector(selectJobs);
 
+  /*
   useEffect(() => {
     if (currentUser === null) navigation.navigate("LogInScreen");
   }, []);
-
+*/
   //console.log("user is: ");
   //console.log(currentUser);
 
