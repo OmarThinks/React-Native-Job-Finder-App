@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
 const JobCard = ({ job }) => {
-  console.log(job);
+  //console.log(job);
   const { id, employerImage, employerName, title, salary, location } = job;
   const theme = useTheme();
   return (

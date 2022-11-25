@@ -12,6 +12,8 @@ import {
 
 import LogInScreen from "./screens/LogIn";
 import HomeScreen from "./screens/Home";
+import { SheetProvider } from "react-native-actions-sheet";
+import "./components/Sheets/sheets.js";
 
 const Stack = createNativeStackNavigator();
 

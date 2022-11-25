@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
 const PostCard = ({ post }) => {
-  console.log(employerImage);
+  //console.log(employerImage);
   const { employerImage, employerName, title, jobType, salary } = post;
   const theme = useTheme();
   return (

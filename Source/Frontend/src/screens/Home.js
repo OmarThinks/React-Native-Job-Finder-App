@@ -29,6 +29,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  placeholderContainer: {
+    flex: 1,
+    justifyContent: "space-around",
+    alignItems: "center",
+    paddingVertical: "10%",
+  },
   separator: {
     display: "flex",
     justifyContent: "space-between",
@@ -63,7 +69,7 @@ const HomeRoute = () => {
   const theme = useTheme();
   const navigation = useNavigation();
   const posts = useSelector(selectPosts);
-  console.log(posts);
+  //console.log(posts);
   const currentUser = useSelector(selectCurrentUser);
   const jobs = useSelector(selectJobs);
 
@@ -216,101 +222,145 @@ const HomeRoute = () => {
   );
 };
 
-const MessageRoute = () => <Text>Message</Text>;
+const MessageRoute = () => {
+  const theme = useTheme();
+  return (
+    <View
+      style={{
+        ...styles.placeholderContainer,
+        backgroundColor: theme.colors.background2,
+      }}
+    >
+      <Text style={{ fontSize: 40 }}>Message</Text>
+      <ChatActive size={80} />
+      <ChatIdle size={80} />
+    </View>
+  );
+};
 
-const ProfileRoute = () => <Text>Profile</Text>;
+const ProfileRoute = () => {
+  const theme = useTheme();
 
-const SettingsRoute = () => <Text>Settings</Text>;
+  return (
+    <View
+      style={{
+        ...styles.placeholderContainer,
+        backgroundColor: theme.colors.background2,
+      }}
+    >
+      <Text style={{ fontSize: 40 }}>Message</Text>
+      <ProfileActive size={80} />
+      <ProfileIdle size={80} />
+    </View>
+  );
+};
+
+const SettingsRoute = () => {
+  const theme = useTheme();
+
+  return (
+    <View
+      style={{
+        ...styles.placeholderContainer,
+        backgroundColor: theme.colors.background2,
+      }}
+    >
+      <Text style={{ fontSize: 40 }}>Message</Text>
+      <SettingActive size={80} />
+      <SettingIdle size={80} />
+    </View>
+  );
+};
+
+const HomeActive = ({ size }) => {
+  const more = size ? { width: size, height: size } : {};
+  return (
+    <Image
+      source={require("../shapes/NavBar/HomeActive.png")}
+      style={{ ...styles.navBarIcon, ...more }}
+      resizeMode="contain"
+    />
+  );
+};
+
+const HomeIdle = ({ size }) => {
+  const more = size ? { width: size, height: size } : {};
+  return (
+    <Image
+      source={require("../shapes/NavBar/HomeIdle.png")}
+      style={{ ...styles.navBarIcon, ...more }}
+    />
+  );
+};
+
+const ChatActive = ({ size }) => {
+  const more = size ? { width: size, height: size } : {};
+  return (
+    <Image
+      source={require("../shapes/NavBar/ChatActive.png")}
+      style={{ ...styles.navBarIcon, ...more }}
+      resizeMode="contain"
+    />
+  );
+};
+
+const ChatIdle = ({ size }) => {
+  const more = size ? { width: size, height: size } : {};
+  return (
+    <Image
+      source={require("../shapes/NavBar/ChatIdle.png")}
+      style={{ ...styles.navBarIcon, ...more }}
+      resizeMode="contain"
+    />
+  );
+};
+
+const ProfileActive = ({ size }) => {
+  const more = size ? { width: size, height: size } : {};
+  return (
+    <Image
+      source={require("../shapes/NavBar/ProfileActive.png")}
+      style={{ ...styles.navBarIcon, ...more }}
+      resizeMode="contain"
+    />
+  );
+};
+
+const ProfileIdle = ({ size }) => {
+  const more = size ? { width: size, height: size } : {};
+  return (
+    <Image
+      source={require("../shapes/NavBar/ProfileIdle.png")}
+      style={{ ...styles.navBarIcon, ...more }}
+      resizeMode="contain"
+    />
+  );
+};
+
+const SettingActive = ({ size }) => {
+  const more = size ? { width: size, height: size } : {};
+  return (
+    <Image
+      source={require("../shapes/NavBar/SettingActive.png")}
+      style={{ ...styles.navBarIcon, ...more }}
+      resizeMode="contain"
+    />
+  );
+};
+
+const SettingIdle = ({ size }) => {
+  const more = size ? { width: size, height: size } : {};
+  return (
+    <Image
+      source={require("../shapes/NavBar/SettingIdle.png")}
+      style={{ ...styles.navBarIcon, ...more }}
+      resizeMode="contain"
+    />
+  );
+};
 
 const HomeScreen = () => {
   const [index, setIndex] = useState(0);
-
-  const HomeActive = () => {
-    return (
-      <Image
-        source={require("../shapes/NavBar/HomeActive.png")}
-        style={{ ...styles.navBarIcon }}
-        resizeMode="contain"
-      />
-    );
-  };
-
-  const HomeIdle = () => {
-    return (
-      <Image
-        source={require("../shapes/NavBar/HomeIdle.png")}
-        style={{ ...styles.navBarIcon }}
-      />
-    );
-  };
-
-  const ChatActive = () => {
-    return (
-      <Image
-        source={require("../shapes/NavBar/ChatActive.png")}
-        style={{ ...styles.navBarIcon }}
-        resizeMode="contain"
-      />
-    );
-  };
-
-  const ChatIdle = () => {
-    return (
-      <Image
-        source={require("../shapes/NavBar/ChatIdle.png")}
-        style={{ ...styles.navBarIcon }}
-        resizeMode="contain"
-      />
-    );
-  };
-
-  const ProfileActive = () => {
-    return (
-      <Image
-        source={require("../shapes/NavBar/ProfileActive.png")}
-        style={{ ...styles.navBarIcon }}
-        resizeMode="contain"
-      />
-    );
-  };
-
-  const ProfileIdle = () => {
-    return (
-      <Image
-        source={require("../shapes/NavBar/ProfileIdle.png")}
-        style={{ ...styles.navBarIcon }}
-        resizeMode="contain"
-      />
-    );
-  };
-
-  const SettingActive = () => {
-    return (
-      <Image
-        source={require("../shapes/NavBar/SettingActive.png")}
-        style={{ ...styles.navBarIcon }}
-        resizeMode="contain"
-      />
-    );
-  };
-
-  /*
-
-      <Image
-        source={require("../shapes/NavBar/SettingActive.png")}
-        style={{ ...styles.navBarIcon }}
-        resizeMode="contain"
-      />*/
-
-  const SettingIdle = () => {
-    return (
-      <Image
-        source={require("../shapes/NavBar/SettingIdle.png")}
-        style={{ ...styles.navBarIcon }}
-        resizeMode="contain"
-      />
-    );
-  };
 
   const [routes] = useState([
     {
