@@ -39,8 +39,8 @@ const theme = {
 const App = () => {
   return (
     <Provider store={store}>
-      <SheetProvider>
-        <PaperProvider theme={theme}>
+      <PaperProvider theme={theme}>
+        <SheetProvider>
           <NavigationContainer>
             <Stack.Navigator initialRouteName="HomeScreen">
               <Stack.Screen
@@ -60,8 +60,8 @@ const App = () => {
               />
             </Stack.Navigator>
           </NavigationContainer>
-        </PaperProvider>
-      </SheetProvider>
+        </SheetProvider>
+      </PaperProvider>
     </Provider>
   );
 };
