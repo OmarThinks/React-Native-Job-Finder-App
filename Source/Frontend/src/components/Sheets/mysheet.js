@@ -5,10 +5,11 @@ import ActionSheet, {
   registerSheet,
 } from "react-native-actions-sheet";
 import { View, Text } from "react-native";
+import { useTheme } from "react-native-paper";
 
 function MySheet(props) {
-  console.log("sheetProps");
-  console.log(props);
+  const payload = props.payload;
+
   return (
     <ActionSheet id={props.sheetId}>
       <View>

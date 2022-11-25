@@ -273,7 +273,7 @@ const SettingsRoute = () => {
       <SettingIdle size={80} />
       <Button
         onPress={() => {
-          SheetManager.show("mysheet", { payload: { hi: 1 } });
+          SheetManager.show("mysheet");
         }}
       >
         Hi
