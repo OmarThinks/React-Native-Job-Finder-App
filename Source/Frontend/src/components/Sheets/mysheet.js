@@ -13,12 +13,14 @@ const styles = StyleSheet.create({
   },
 });
 
-const NavButton = ({ text, activeTab }) => {
+const NavButton = ({ text, activeTab, setActiveTab }) => {
   const active = text === activeTab;
 
   const theme = useTheme();
 
-  const backgroundColor = active ? theme.colors.surface : "transpatent";
+  const backgroundColor = active
+    ? theme.colors.surface
+    : theme.colors.background2;
   const textColor = active
     ? theme.colors.buttonText
     : theme.colors.secondaryText;
@@ -28,7 +30,9 @@ const NavButton = ({ text, activeTab }) => {
       mode="contained"
       buttonColor={backgroundColor}
       textColor={textColor}
-      onPress={() => {}}
+      onPress={() => {
+        setActiveTab(text);
+      }}
       contentStyle={{ height: 50, width: 123 }}
       style={{ borderRadius: 12, fontSize: 30 }}
     >
@@ -177,9 +181,21 @@ function MySheet(props) {
             width: "100%",
           }}
         >
-          <NavButton text={"Description"} activeTab={activeTab} />
-          <NavButton text={"Company"} activeTab={activeTab} />
-          <NavButton text={"Reviews"} activeTab={activeTab} />
+          <NavButton
+            text={"Description"}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+          <NavButton
+            text={"Company"}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
+          <NavButton
+            text={"Reviews"}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
         </View>
 
         <Text style={{ alignSelf: "flex-start" }}>Qualifications</Text>
