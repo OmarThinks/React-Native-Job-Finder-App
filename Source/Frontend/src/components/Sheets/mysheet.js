@@ -18,14 +18,30 @@ function MySheet(props) {
         style={{
           backgroundColor: theme.colors.background2,
           alignItems: "center",
+          borderRadius: 40,
         }}
       >
         <Text>Upper Border</Text>
         <Text>Upper Image</Text>
         <Text>UI Design Lead</Text>
-        <Text>Spotify</Text>
-        <Text>Full Time</Text>
-        <Text>Description</Text>
+        <View style={{ display: "flex", flexDirection: "row" }}>
+          <Text>Spotify</Text>
+          <Text>Dash</Text>
+          <Text>LocationSign</Text>
+          <Text>Toronto Canada</Text>
+        </View>
+
+        <View style={{ display: "flex", flexDirection: "row" }}>
+          <Text>Hour</Text>
+          <Text>Full Time</Text>
+          <Text>$1200/m</Text>
+        </View>
+        <View style={{ display: "flex", flexDirection: "row" }}>
+          <Text>Description</Text>
+          <Text>Company</Text>
+          <Text>Reviews</Text>
+        </View>
+
         <Text style={{ alignSelf: "flex-start" }}>Qualifications</Text>
       </View>
     </ActionSheet>
