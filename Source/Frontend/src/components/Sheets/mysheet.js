@@ -87,8 +87,6 @@ const ListView = ({ items, placeholderPluralName }) => {
   return <StringsToUnorderedList strings={items} />;
 };
 
-const ReviewsView = () => {};
-
 function MySheet(props) {
   const jobId = props.payload; // useless now
   //console.log(jobId);
@@ -115,6 +113,22 @@ function MySheet(props) {
     (activeTab === "Description" ? "Qualifications" : activeTab) + ":";
 
   const theme = useTheme();
+
+  let detailsView = <></>;
+  if (activeTab === "Description") {
+    detailsView = (
+      <ListView
+        items={qualifications}
+        placeholderPluralName={"qualifications"}
+      />
+    );
+  } else if (activeTab === "Company") {
+    detailsView = <Text>{company}</Text>;
+  } else {
+    detailsView = (
+      <ListView items={reviews} placeholderPluralName={"reviews"} />
+    );
+  }
 
   return (
     <ActionSheet id={props.sheetId}>
@@ -281,14 +295,8 @@ function MySheet(props) {
             >
               {tabHeader}
             </Text>
-
-            <ListView items={reviews} placeholderPluralName={"reviews"} />
-            <ListView
-              items={qualifications}
-              placeholderPluralName={"qualifications"}
-            />
           </View>
-          <Text>{company}</Text>
+          {detailsView}
         </ScrollView>
       </View>
     </ActionSheet>
