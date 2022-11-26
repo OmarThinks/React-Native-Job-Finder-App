@@ -55,16 +55,18 @@ function MySheet(props) {
   //console.log(jobId);
 
   const {
-    company,
+    company, // later
     description,
     employerImage,
     employerName,
     jobType,
     location,
-    reviews,
+    reviews, // later
     salary,
     title,
   } = useSelector(selectJobsInfo);
+  const { qualifications } = description; // later
+
   const windowHeight = Dimensions.get("window").height;
   const maxTabHeight = windowHeight * 0.7;
 
@@ -98,7 +100,7 @@ function MySheet(props) {
 
             <Image
               source={{
-                uri: "https://www.freepnglogos.com/uploads/spotify-logo-png/file-spotify-logo-png-4.png",
+                uri: employerImage,
               }}
               style={{ width: 70, height: 70, borderRadius: 20, marginTop: 32 }}
             />
@@ -112,7 +114,7 @@ function MySheet(props) {
                 marginTop: 20,
               }}
             >
-              UI Design Lead
+              {title}
             </Text>
             <View
               style={{
@@ -129,7 +131,7 @@ function MySheet(props) {
                   fontSize: 14,
                 }}
               >
-                Spotify
+                {employerName}
               </Text>
               <View
                 style={{
@@ -153,7 +155,7 @@ function MySheet(props) {
                   marginLeft: 8.3,
                 }}
               >
-                Toronto Canada
+                {location}
               </Text>
             </View>
 
@@ -187,7 +189,7 @@ function MySheet(props) {
                     color: theme.colors.secondaryText,
                   }}
                 >
-                  Full Time
+                  {jobType}
                 </Text>
               </View>
               <Text
@@ -197,7 +199,7 @@ function MySheet(props) {
                   color: theme.colors.secondaryText,
                 }}
               >
-                $1200/m
+                ${salary}/m
               </Text>
             </View>
 
