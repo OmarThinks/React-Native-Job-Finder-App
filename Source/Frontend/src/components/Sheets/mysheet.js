@@ -49,11 +49,49 @@ function MySheet(props) {
         >
           UI Design Lead
         </Text>
-        <View style={{ display: "flex", flexDirection: "row" }}>
-          <Text>Spotify</Text>
-          <Text>Dash</Text>
-          <Text>LocationSign</Text>
-          <Text>Toronto Canada</Text>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            marginTop: 22,
+          }}
+        >
+          <Text
+            style={{
+              color: theme.colors.primaryText,
+              fontWeight: "500",
+              fontSize: 14,
+              lineHeight: 14,
+            }}
+          >
+            Spotify
+          </Text>
+          <View
+            style={{
+              width: 15,
+              height: 0,
+              borderWidth: 1.5,
+              borderColor: theme.colors.primaryText,
+              marginLeft: 7,
+            }}
+          />
+          <Image
+            source={require("../../shapes/Location.png")}
+            style={{ width: 11.5, height: 13.7, marginLeft: 13.8 }}
+            resizeMode={"contain"}
+          />
+          <Text
+            style={{
+              fontSize: 14,
+              lineHeight: 14,
+              fontWeight: "500",
+              color: theme.colors.secondaryText,
+              marginLeft: 8.3,
+            }}
+          >
+            Toronto Canada
+          </Text>
         </View>
 
         <View style={{ display: "flex", flexDirection: "row" }}>

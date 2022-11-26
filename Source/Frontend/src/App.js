@@ -44,7 +44,7 @@ const App = () => {
       <PaperProvider theme={theme}>
         <SheetProvider>
           <NavigationContainer>
-            <Stack.Navigator initialRouteName="LogInScreen">
+            <Stack.Navigator initialRouteName="HomeScreen">
               <Stack.Screen
                 name="SplashScreen"
                 component={SplashScreen}
