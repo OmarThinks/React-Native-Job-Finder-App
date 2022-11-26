@@ -19,7 +19,46 @@ const InCallScreen = () => {
             flexDirection: "column",
           }}
         >
-          <Text>Hi</Text>
+          <View
+            style={{
+              width: "100%",
+              marginTop: 40,
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              paddingHorizontal: 20,
+            }}
+          >
+            <Text>Hey</Text>
+            <Text>Hey</Text>
+          </View>
+          <View style={{ flexGrow: 1 }} />
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Text>Darlene Robertson</Text>
+            <Text style={{ marginTop: 4 }}>09:12</Text>
+          </View>
+
+          <View
+            style={{
+              width: "100%",
+              marginTop: 70,
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              paddingHorizontal: 20,
+              marginBottom: 70,
+            }}
+          >
+            <Text>Hey</Text>
+            <Text style={{ marginLeft: 40 }}>Hey</Text>
+            <Text style={{ marginLeft: 40 }}>Hey</Text>
+          </View>
         </View>
       </View>
     </SafeAreaView>
