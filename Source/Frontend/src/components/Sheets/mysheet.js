@@ -50,6 +50,19 @@ const NavButton = ({ text, activeTab, setActiveTab }) => {
   );
 };
 
+const ListView = ({ items, placeholderPluralName }) => {
+  if (items.length === 0) {
+    return (
+      <Text>
+        Employer did not provide {placeholderPluralName} to display for this
+        job.
+      </Text>
+    );
+  }
+};
+
+const ReviewsView = () => {};
+
 function MySheet(props) {
   const jobId = props.payload; // useless now
   //console.log(jobId);

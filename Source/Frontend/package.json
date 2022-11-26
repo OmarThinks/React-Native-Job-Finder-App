@@ -9,6 +9,7 @@
     "react-native": "0.69.6",
     "react-native-actions-sheet": "^0.8.10",
     "react-native-paper": "^5.0.0-rc.9",
+    "react-native-unordered-list": "^1.0.4",
     "react-native-vector-icons": "^9.2.0",
     "react-native-web": "~0.18.7",
     "react-redux": "^8.0.5"
