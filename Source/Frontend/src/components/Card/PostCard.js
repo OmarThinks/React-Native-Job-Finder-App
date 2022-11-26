@@ -7,6 +7,7 @@ import {
   View,
   Image,
   FlatList,
+  TouchableOpacity,
 } from "react-native";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -15,8 +16,9 @@ const PostCard = ({ post }) => {
   //console.log(employerImage);
   const { employerImage, employerName, title, jobType, salary } = post;
   const theme = useTheme();
+  const navigation = useNavigation();
   return (
-    <View
+    <TouchableOpacity
       style={{
         width: "100%",
         backgroundColor: theme.colors.background,
@@ -28,6 +30,9 @@ const PostCard = ({ post }) => {
         shadowColor: "rgb(64, 59, 75)",
         shadowOpacity: 0.1,
         shadowOffset: "0px 10px 35px -10px",
+      }}
+      onPress={() => {
+        navigation.navigate("InCallScreen");
       }}
     >
       <View style={{ marginLeft: 15, marginVertical: 15 }}>
@@ -74,7 +79,7 @@ const PostCard = ({ post }) => {
       >
         <Text>${salary}/m</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

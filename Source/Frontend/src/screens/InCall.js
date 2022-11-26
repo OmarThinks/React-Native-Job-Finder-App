@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { Image, SafeAreaView, TouchableOpacity, View } from "react-native";
 import { Button, Text, useTheme } from "react-native-paper";
 
 const InCallScreen = () => {
   const theme = useTheme();
+  const navigation = useNavigation();
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -31,7 +33,11 @@ const InCallScreen = () => {
               paddingHorizontal: 20,
             }}
           >
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.goBack();
+              }}
+            >
               <Image
                 style={{ width: 21, height: 10.5 }}
                 source={require("../shapes/Chevron-left.png")}

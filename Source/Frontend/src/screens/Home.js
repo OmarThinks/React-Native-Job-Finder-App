@@ -272,13 +272,6 @@ const SettingsRoute = () => {
       <Text style={{ fontSize: 35 }}>Message</Text>
       <SettingActive size={40} />
       <SettingIdle size={40} />
-      <Button
-        onPress={() => {
-          SheetManager.show("mysheet");
-        }}
-      >
-        Hi
-      </Button>
     </View>
   );
 };
