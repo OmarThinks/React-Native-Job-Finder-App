@@ -35,11 +35,20 @@ function MySheet(props) {
           source={{
             uri: "https://www.freepnglogos.com/uploads/spotify-logo-png/file-spotify-logo-png-4.png",
           }}
-          style={{ width: 40, height: 40, borderRadius: 20, marginTop: 32 }}
+          style={{ width: 70, height: 70, borderRadius: 20, marginTop: 32 }}
         />
 
-        <Text>Upper Image</Text>
-        <Text>UI Design Lead</Text>
+        <Text
+          style={{
+            fontSize: 20,
+            fontWeight: "600",
+            lineHeight: 20,
+            color: theme.colors.primaryText,
+            marginTop: 20,
+          }}
+        >
+          UI Design Lead
+        </Text>
         <View style={{ display: "flex", flexDirection: "row" }}>
           <Text>Spotify</Text>
           <Text>Dash</Text>
