@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import ActionSheet, {
   SheetManager,
   SheetProps,
   registerSheet,
 } from "react-native-actions-sheet";
 import { View, Text, Image, StyleSheet } from "react-native";
-import { useTheme, Avatar } from "react-native-paper";
+import { useTheme, Avatar, Button } from "react-native-paper";
 
 const styles = StyleSheet.create({
   secondary18: {
@@ -13,8 +13,34 @@ const styles = StyleSheet.create({
   },
 });
 
+const NavButton = ({ text, activeTab }) => {
+  const active = text === activeTab;
+
+  const theme = useTheme();
+
+  const backgroundColor = active ? theme.colors.surface : "transpatent";
+  const textColor = active
+    ? theme.colors.buttonText
+    : theme.colors.secondaryText;
+
+  return (
+    <Button
+      mode="contained"
+      buttonColor={backgroundColor}
+      textColor={textColor}
+      onPress={() => {}}
+      contentStyle={{ height: 50, width: 123 }}
+      style={{ borderRadius: 12, fontSize: 30 }}
+    >
+      <Text style={{ fontSize: 13, fontWeight: "500" }}>{text}</Text>
+    </Button>
+  );
+};
+
 function MySheet(props) {
   const payload = props.payload;
+
+  const [activeTab, setActiveTab] = useState("Description");
 
   const theme = useTheme();
 
@@ -142,10 +168,18 @@ function MySheet(props) {
           </Text>
         </View>
 
-        <View style={{ display: "flex", flexDirection: "row" }}>
-          <Text>Description</Text>
-          <Text>Company</Text>
-          <Text>Reviews</Text>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            marginTop: 31,
+            justifyContent: "space-around",
+            width: "100%",
+          }}
+        >
+          <NavButton text={"Description"} activeTab={activeTab} />
+          <NavButton text={"Company"} activeTab={activeTab} />
+          <NavButton text={"Reviews"} activeTab={activeTab} />
         </View>
 
         <Text style={{ alignSelf: "flex-start" }}>Qualifications</Text>
