@@ -7,6 +7,7 @@ import {
   View,
   Image,
   FlatList,
+  TouchableOpacity,
 } from "react-native";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -16,7 +17,7 @@ const JobCard = ({ job }) => {
   const { id, employerImage, employerName, title, salary, location } = job;
   const theme = useTheme();
   return (
-    <View
+    <TouchableOpacity
       style={{
         display: "flex",
         flexDirection: "column",
@@ -35,15 +36,35 @@ const JobCard = ({ job }) => {
           paddingTop: 15,
         }}
       >
-        <Image
-          source={{ uri: employerImage }}
+        <View
           style={{
-            width: 40,
-            height: 40,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
             marginLeft: 15,
-            borderRadius: 13,
           }}
-        />
+        >
+          <Image
+            source={{ uri: employerImage }}
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: 13,
+            }}
+          />
+
+          <Text
+            style={{
+              marginTop: 5,
+              fontSize: 12,
+              lineHeight: 12,
+              fontWeight: "500",
+              color: theme.colors.secondaryText,
+            }}
+          >
+            {employerName}
+          </Text>
+        </View>
         <Image
           source={require("../../shapes/Love.png")}
           style={{
@@ -53,18 +74,7 @@ const JobCard = ({ job }) => {
           }}
         />
       </View>
-      <Text
-        style={{
-          marginTop: 5,
-          marginLeft: 13,
-          fontSize: 12,
-          lineHeight: 12,
-          fontWeight: "500",
-          color: theme.colors.secondaryText,
-        }}
-      >
-        {employerName}
-      </Text>
+
       <Text
         style={{
           marginTop: 20,
@@ -109,7 +119,7 @@ const JobCard = ({ job }) => {
           {location}
         </Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
