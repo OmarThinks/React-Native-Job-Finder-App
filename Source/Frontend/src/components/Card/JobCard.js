@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import { SheetManager } from "react-native-actions-sheet";
 
 const JobCard = ({ job }) => {
   //console.log(job);
@@ -25,6 +26,9 @@ const JobCard = ({ job }) => {
         borderRadius: 20,
         backgroundColor: theme.colors.background,
         width: 260,
+      }}
+      onPress={() => {
+        SheetManager.show("mysheet", { payload: job.id });
       }}
     >
       <View

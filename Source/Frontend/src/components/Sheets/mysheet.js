@@ -49,7 +49,8 @@ const NavButton = ({ text, activeTab, setActiveTab }) => {
 };
 
 function MySheet(props) {
-  const payload = props.payload;
+  const jobId = props.payload;
+  console.log(jobId);
   const windowHeight = Dimensions.get("window").height;
   const maxTabHeight = windowHeight * 0.7;
 
