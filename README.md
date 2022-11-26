@@ -2,9 +2,27 @@
 
 # Technologies Used:
 
+- React
+- React Native, React Native Paper, React Navigation
+- Readux ToolKit
+- react-native-unordered-list
+
 # How to Run:
 
+<b>
+
+```bash
+git clone https://github.com/OmarThinks/React-Native-Job-Finder-App
+cd React-Native-Job-Finder-App/Source
+npm install
+npm run android
+```
+
+</b>
+
 # Design:
+
+Figma Design Link: https://www.figma.com/file/MhW5fBvYX41AITpgRwFDzc/React-Developer-Task-2022
 
 <img src="Media/Design/01.png" width=300>
 <img src="Media/Design/02.png" width=300>
