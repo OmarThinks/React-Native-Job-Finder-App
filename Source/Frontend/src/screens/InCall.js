@@ -1,7 +1,9 @@
 import { Image, SafeAreaView, View } from "react-native";
-import { Text } from "react-native-paper";
+import { Text, useTheme } from "react-native-paper";
 
 const InCallScreen = () => {
+  const theme = useTheme();
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={{ width: "100%", height: "100%" }}>
@@ -40,8 +42,25 @@ const InCallScreen = () => {
               alignItems: "center",
             }}
           >
-            <Text>Darlene Robertson</Text>
-            <Text style={{ marginTop: 4 }}>09:12</Text>
+            <Text
+              style={{
+                color: theme.colors.background,
+                fontSize: 16,
+                fontWeight: "500",
+              }}
+            >
+              Darlene Robertson
+            </Text>
+            <Text
+              style={{
+                marginTop: 4,
+                color: theme.colors.background,
+                fontSize: 13,
+                fontWeight: "500",
+              }}
+            >
+              09:12
+            </Text>
           </View>
 
           <View
