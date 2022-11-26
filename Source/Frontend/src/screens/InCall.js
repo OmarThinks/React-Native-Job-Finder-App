@@ -8,7 +8,7 @@ const InCallScreen = () => {
         <Image
           source={require("../shapes/People/01.png")}
           resizeMethod={"scale"}
-          style={{ overflow: "hidden", width: "100%", height: "100%" }}
+          style={{ width: "100%", height: "100%" }}
         />
         <View
           style={{
@@ -55,9 +55,26 @@ const InCallScreen = () => {
               marginBottom: 70,
             }}
           >
-            <Text>Hey</Text>
-            <Text style={{ marginLeft: 40 }}>Hey</Text>
-            <Text style={{ marginLeft: 40 }}>Hey</Text>
+            <Image
+              source={require("../shapes/Mic.png")}
+              style={{ width: 70, height: 70 }}
+              resizeMode="contain"
+            />
+
+            <Image
+              source={require("../shapes/End.png")}
+              style={{ marginLeft: 40, width: 70, height: 70 }}
+              resizeMode="contain"
+            />
+
+            <Image
+              source={require("../shapes/Video.png")}
+              style={{ marginLeft: 40, width: 70, height: 70 }}
+              resizeMode="contain"
+              onProgress={() => {
+                console.log("hi");
+              }}
+            />
           </View>
         </View>
       </View>
