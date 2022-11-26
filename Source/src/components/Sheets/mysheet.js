@@ -63,16 +63,24 @@ const NavButton = ({ text, activeTab, setActiveTab }) => {
 const StringsToUnorderedList = ({ strings }) => {
   const theme = useTheme();
   const toRender = strings.map((item) => {
-    console.log("item is");
-    console.log(item);
-    console.log(typeof item);
+    //console.log("item is");
+    //console.log(item);
+    //console.log(typeof item);
     return (
       <Unorderedlist
-        style={{ ...styles.paragraph, color: theme.colors.secondaryText }}
+        style={{
+          ...styles.paragraph,
+          color: theme.colors.secondaryText,
+          backgroundColor: theme.colors.background2,
+        }}
         key={item}
       >
         <RNPText
-          style={{ ...styles.paragraph, color: theme.colors.secondaryText }}
+          style={{
+            ...styles.paragraph,
+            color: theme.colors.secondaryText,
+            backgroundColor: theme.colors.background2,
+          }}
         >
           {item}
         </RNPText>
@@ -144,6 +152,7 @@ function MySheet(props) {
         style={{
           ...styles.paragraph,
           color: theme.colors.secondaryText,
+          backgroundColor: theme.colors.background2,
           paddingLeft: 15,
         }}
       >
