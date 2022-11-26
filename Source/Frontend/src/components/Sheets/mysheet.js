@@ -21,6 +21,15 @@ function MySheet(props) {
           borderRadius: 40,
         }}
       >
+        <View
+          style={{
+            width: 80,
+            height: 4,
+            marginTop: 10,
+            borderRadius: 10,
+            backgroundColor: theme.colors.sheetTop,
+          }}
+        ></View>
         <Text>Upper Border</Text>
         <Text>Upper Image</Text>
         <Text>UI Design Lead</Text>

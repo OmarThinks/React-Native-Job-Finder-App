@@ -30,6 +30,7 @@ const theme = {
     secondaryText2: "#A8A8AA",
     surface: "#4CA6A8",
     onSurface: "#1A1D1E",
+    sheetTop: "#E1E1E1",
 
     primary: "#4CA6A8", //Input text inactive upper text color
     onSurfaceVariant: "#6A6A6A", // Input Text: Empty title color
