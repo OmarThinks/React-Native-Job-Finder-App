@@ -4,8 +4,14 @@ import ActionSheet, {
   SheetProps,
   registerSheet,
 } from "react-native-actions-sheet";
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import { useTheme, Avatar } from "react-native-paper";
+
+const styles = StyleSheet.create({
+  secondary18: {
+    flex: 1,
+  },
+});
 
 function MySheet(props) {
   const payload = props.payload;
@@ -62,7 +68,6 @@ function MySheet(props) {
               color: theme.colors.primaryText,
               fontWeight: "500",
               fontSize: 14,
-              lineHeight: 14,
             }}
           >
             Spotify
@@ -84,7 +89,6 @@ function MySheet(props) {
           <Text
             style={{
               fontSize: 14,
-              lineHeight: 14,
               fontWeight: "500",
               color: theme.colors.secondaryText,
               marginLeft: 8.3,
@@ -94,11 +98,50 @@ function MySheet(props) {
           </Text>
         </View>
 
-        <View style={{ display: "flex", flexDirection: "row" }}>
-          <Text>Hour</Text>
-          <Text>Full Time</Text>
-          <Text>$1200/m</Text>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+            width: "100%",
+            alignItems: "center",
+            marginTop: 31,
+          }}
+        >
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <Image
+              source={require("../../shapes/Watch.png")}
+              style={{ width: 20, height: 20 }}
+              resizeMode={"contain"}
+            />
+            <Text
+              style={{
+                marginLeft: 10,
+                fontWeight: "400",
+                fontSize: 18,
+                color: theme.colors.secondaryText,
+              }}
+            >
+              Full Time
+            </Text>
+          </View>
+          <Text
+            style={{
+              fontWeight: "400",
+              fontSize: 18,
+              color: theme.colors.secondaryText,
+            }}
+          >
+            $1200/m
+          </Text>
         </View>
+
         <View style={{ display: "flex", flexDirection: "row" }}>
           <Text>Description</Text>
           <Text>Company</Text>
