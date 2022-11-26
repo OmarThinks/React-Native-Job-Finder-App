@@ -13,6 +13,8 @@ import {
   Dimensions,
 } from "react-native";
 import { useTheme, Avatar, Button } from "react-native-paper";
+import { useSelector } from "react-redux";
+import { selectJobsInfo } from "../../features/jobsInfo/jobsInfoSlice";
 
 const styles = StyleSheet.create({
   secondary18: {
@@ -49,8 +51,20 @@ const NavButton = ({ text, activeTab, setActiveTab }) => {
 };
 
 function MySheet(props) {
-  const jobId = props.payload;
-  console.log(jobId);
+  const jobId = props.payload; // useless now
+  //console.log(jobId);
+
+  const {
+    company,
+    description,
+    employerImage,
+    employerName,
+    jobType,
+    location,
+    reviews,
+    salary,
+    title,
+  } = useSelector(selectJobsInfo);
   const windowHeight = Dimensions.get("window").height;
   const maxTabHeight = windowHeight * 0.7;
 
