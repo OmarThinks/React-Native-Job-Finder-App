@@ -1,5 +1,7 @@
 # React-Native-Job-Finder-App
 
+# Youtube Video:
+
 # Technologies Used:
 
 - React
@@ -48,16 +50,16 @@ Figma Design Link: https://www.figma.com/file/MhW5fBvYX41AITpgRwFDzc/React-Devel
 <img src="Media/ScreenShots/14.png" width=300>
 <img src="Media/ScreenShots/15.png" width=300>
 <img src="Media/ScreenShots/16.png" width=300>
-<img src="Media/ScreenShots/17.png" width=300>
-<img src="Media/ScreenShots/18.png" width=300>
-<img src="Media/ScreenShots/19.png" width=300>
-<img src="Media/ScreenShots/20.png" width=300>
-<img src="Media/ScreenShots/21.png" width=300>
-<img src="Media/ScreenShots/22.png" width=300>
-<img src="Media/ScreenShots/23.png" width=300>
-<img src="Media/ScreenShots/24.png" width=300>
-<img src="Media/ScreenShots/25.png" width=300>
-<img src="Media/ScreenShots/26.png" width=300>
-<img src="Media/ScreenShots/27.png" width=300>
-<img src="Media/ScreenShots/28.png" width=300>
-<img src="Media/ScreenShots/29.png" width=300>
+<img src="Media/ScreenShots/17.png" width=600>
+<img src="Media/ScreenShots/18.png" width=600>
+<img src="Media/ScreenShots/19.png" width=600>
+<img src="Media/ScreenShots/20.png" width=600>
+<img src="Media/ScreenShots/21.png" width=600>
+<img src="Media/ScreenShots/22.png" width=600>
+<img src="Media/ScreenShots/23.png" width=600>
+<img src="Media/ScreenShots/24.png" width=600>
+<img src="Media/ScreenShots/25.png" width=600>
+<img src="Media/ScreenShots/26.png" width=600>
+<img src="Media/ScreenShots/27.png" width=600>
+<img src="Media/ScreenShots/28.png" width=600>
+<img src="Media/ScreenShots/29.png" width=600>
