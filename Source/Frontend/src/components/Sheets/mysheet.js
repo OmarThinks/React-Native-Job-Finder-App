@@ -23,11 +23,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   paragraphContainer: {
-    paddingHorizontal: 0,
     alignItems: "flex-start",
   },
   paragraph: {
-    fontSize: 16,
+    marginTop: 20,
+    fontSize: 13,
   },
 });
 
@@ -66,8 +66,15 @@ const StringsToUnorderedList = ({ strings }) => {
     console.log(item);
     console.log(typeof item);
     return (
-      <Unorderedlist style={{ ...styles.paragraph, marginLeft: 20 }} key={item}>
-        <RNPText style={{ color: theme.colors.primaryText }}>{item}</RNPText>
+      <Unorderedlist
+        style={{ ...styles.paragraph, color: theme.colors.secondaryText }}
+        key={item}
+      >
+        <RNPText
+          style={{ ...styles.paragraph, color: theme.colors.secondaryText }}
+        >
+          {item}
+        </RNPText>
       </Unorderedlist>
     );
   });
@@ -76,9 +83,17 @@ const StringsToUnorderedList = ({ strings }) => {
 };
 
 const ListView = ({ items, placeholderPluralName }) => {
+  const theme = useTheme();
+
   if (items.length === 0) {
     return (
-      <Text>
+      <Text
+        style={{
+          ...styles.paragraph,
+          color: theme.colors.secondaryText,
+          paddingLeft: 15,
+        }}
+      >
         Employer did not provide {placeholderPluralName} to display for this
         job.
       </Text>
@@ -123,7 +138,17 @@ function MySheet(props) {
       />
     );
   } else if (activeTab === "Company") {
-    detailsView = <Text>{company}</Text>;
+    detailsView = (
+      <Text
+        style={{
+          ...styles.paragraph,
+          color: theme.colors.secondaryText,
+          paddingLeft: 15,
+        }}
+      >
+        {company}
+      </Text>
+    );
   } else {
     detailsView = (
       <ListView items={reviews} placeholderPluralName={"reviews"} />
@@ -296,7 +321,7 @@ function MySheet(props) {
               {tabHeader}
             </Text>
           </View>
-          {detailsView}
+          <View style={{ marginHorizontal: 20 }}>{detailsView}</View>
         </ScrollView>
       </View>
     </ActionSheet>
