@@ -38,6 +38,11 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
   },
+  line: {
+    width: 20,
+    height: 0,
+    borderWidth: 2,
+  },
 });
 
 const LogInScreen = () => {
@@ -175,18 +180,30 @@ const LogInScreen = () => {
         >
           LOG IN
         </Button>
-        <Text
+
+        <View
           style={{
-            textAlign: "center",
-            fontSize: 16,
-            lineHeight: 16,
-            color: theme.colors.secondaryText,
+            justifyContent: "center",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
             marginTop: 40,
-            fontWeight: "400",
           }}
         >
-          Or Continue with
-        </Text>
+          <View style={{ ...styles.line, borderColor: theme.colors.line }} />
+          <Text
+            style={{
+              fontSize: 16,
+              lineHeight: 16,
+              color: theme.colors.secondaryText,
+              fontWeight: "400",
+              marginHorizontal: 10,
+            }}
+          >
+            Or Continue with
+          </Text>
+          <View style={{ ...styles.line, borderColor: theme.colors.line }} />
+        </View>
         <View
           style={{
             ...styles.ceterverView,
