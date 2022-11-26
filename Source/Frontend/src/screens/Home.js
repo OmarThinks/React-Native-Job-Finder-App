@@ -235,9 +235,9 @@ const MessageRoute = () => {
         backgroundColor: theme.colors.background2,
       }}
     >
-      <Text style={{ fontSize: 40 }}>Message</Text>
-      <ChatActive size={80} />
-      <ChatIdle size={80} />
+      <Text style={{ fontSize: 35 }}>Message</Text>
+      <ChatActive size={40} />
+      <ChatIdle size={40} />
     </View>
   );
 };
@@ -252,9 +252,9 @@ const ProfileRoute = () => {
         backgroundColor: theme.colors.background2,
       }}
     >
-      <Text style={{ fontSize: 40 }}>Message</Text>
-      <ProfileActive size={80} />
-      <ProfileIdle size={80} />
+      <Text style={{ fontSize: 35 }}>Message</Text>
+      <ProfileActive size={40} />
+      <ProfileIdle size={40} />
     </View>
   );
 };
@@ -269,9 +269,9 @@ const SettingsRoute = () => {
         backgroundColor: theme.colors.background2,
       }}
     >
-      <Text style={{ fontSize: 40 }}>Message</Text>
-      <SettingActive size={80} />
-      <SettingIdle size={80} />
+      <Text style={{ fontSize: 35 }}>Message</Text>
+      <SettingActive size={40} />
+      <SettingIdle size={40} />
       <Button
         onPress={() => {
           SheetManager.show("mysheet");
