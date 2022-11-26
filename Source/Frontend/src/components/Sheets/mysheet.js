@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ActionSheet, {
   SheetManager,
   SheetProps,
@@ -11,6 +11,7 @@ import {
   StyleSheet,
   ScrollView,
   Dimensions,
+  TouchableOpacity,
 } from "react-native";
 import { useTheme, Avatar, Button, Text as RNPText } from "react-native-paper";
 import { useSelector } from "react-redux";
@@ -322,6 +323,43 @@ function MySheet(props) {
             </Text>
           </View>
           <View style={{ marginHorizontal: 20 }}>{detailsView}</View>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              marginHorizontal: 20,
+              marginTop: 30,
+              marginBottom: 30,
+            }}
+          >
+            <Button
+              style={{ flexGrow: 1, borderRadius: 12 }}
+              buttonColor={theme.colors.surface}
+              textColor={theme.colors.buttonText}
+              onPress={() => {}}
+              contentStyle={{ height: 54 }}
+            >
+              Apply Now
+            </Button>
+            <TouchableOpacity
+              style={{
+                marginLeft: 20,
+                borderRadius: 12,
+                backgroundColor: theme.colors.surface,
+                height: 54,
+                width: 54,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Image
+                source={require("../../shapes/Chat.png")}
+                style={{ width: 20, height: 20 }}
+                resizeMode={"contain"}
+              />
+            </TouchableOpacity>
+          </View>
         </ScrollView>
       </View>
     </ActionSheet>
