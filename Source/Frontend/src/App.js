@@ -12,6 +12,7 @@ import {
 
 import LogInScreen from "./screens/LogIn";
 import HomeScreen from "./screens/Home";
+import InCallScreen from "./screens/InCall";
 import { SheetProvider } from "react-native-actions-sheet";
 import "./components/Sheets/sheets.js";
 
@@ -44,7 +45,7 @@ const App = () => {
       <PaperProvider theme={theme}>
         <SheetProvider>
           <NavigationContainer>
-            <Stack.Navigator initialRouteName="HomeScreen">
+            <Stack.Navigator initialRouteName="InCallScreen">
               <Stack.Screen
                 name="SplashScreen"
                 component={SplashScreen}
@@ -58,6 +59,11 @@ const App = () => {
               <Stack.Screen
                 name="HomeScreen"
                 component={HomeScreen}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="InCallScreen"
+                component={InCallScreen}
                 options={{ headerShown: false }}
               />
             </Stack.Navigator>
