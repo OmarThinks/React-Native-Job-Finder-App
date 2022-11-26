@@ -4,8 +4,8 @@ import ActionSheet, {
   SheetProps,
   registerSheet,
 } from "react-native-actions-sheet";
-import { View, Text } from "react-native";
-import { useTheme } from "react-native-paper";
+import { View, Text, Image } from "react-native";
+import { useTheme, Avatar } from "react-native-paper";
 
 function MySheet(props) {
   const payload = props.payload;
@@ -30,7 +30,14 @@ function MySheet(props) {
             backgroundColor: theme.colors.sheetTop,
           }}
         ></View>
-        <Text>Upper Border</Text>
+
+        <Image
+          source={{
+            uri: "https://www.freepnglogos.com/uploads/spotify-logo-png/file-spotify-logo-png-4.png",
+          }}
+          style={{ width: 40, height: 40, borderRadius: 20, marginTop: 32 }}
+        />
+
         <Text>Upper Image</Text>
         <Text>UI Design Lead</Text>
         <View style={{ display: "flex", flexDirection: "row" }}>
