@@ -12,13 +12,22 @@ import {
   ScrollView,
   Dimensions,
 } from "react-native";
-import { useTheme, Avatar, Button } from "react-native-paper";
+import { useTheme, Avatar, Button, Text as RNPText } from "react-native-paper";
 import { useSelector } from "react-redux";
 import { selectJobsInfo } from "../../features/jobsInfo/jobsInfoSlice";
+
+import Unorderedlist from "react-native-unordered-list";
 
 const styles = StyleSheet.create({
   secondary18: {
     flex: 1,
+  },
+  paragraphContainer: {
+    paddingHorizontal: 0,
+    alignItems: "flex-start",
+  },
+  paragraph: {
+    fontSize: 16,
   },
 });
 
@@ -50,6 +59,22 @@ const NavButton = ({ text, activeTab, setActiveTab }) => {
   );
 };
 
+const StringsToUnorderedList = ({ strings }) => {
+  const theme = useTheme();
+  const toRender = strings.map((item) => {
+    console.log("item is");
+    console.log(item);
+    console.log(typeof item);
+    return (
+      <Unorderedlist style={{ ...styles.paragraph, marginLeft: 20 }} key={item}>
+        <RNPText style={{ color: theme.colors.primaryText }}>{item}</RNPText>
+      </Unorderedlist>
+    );
+  });
+
+  return <View style={{ ...styles.paragraphContainer }}>{toRender}</View>;
+};
+
 const ListView = ({ items, placeholderPluralName }) => {
   if (items.length === 0) {
     return (
@@ -59,6 +84,7 @@ const ListView = ({ items, placeholderPluralName }) => {
       </Text>
     );
   }
+  return <StringsToUnorderedList strings={items} />;
 };
 
 const ReviewsView = () => {};
@@ -255,7 +281,14 @@ function MySheet(props) {
             >
               {tabHeader}
             </Text>
+
+            <ListView items={reviews} placeholderPluralName={"reviews"} />
+            <ListView
+              items={qualifications}
+              placeholderPluralName={"qualifications"}
+            />
           </View>
+          <Text>{company}</Text>
         </ScrollView>
       </View>
     </ActionSheet>
