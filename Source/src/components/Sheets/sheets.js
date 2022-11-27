@@ -1,0 +1,2 @@
+import "./mysheet.js";
+export {};
