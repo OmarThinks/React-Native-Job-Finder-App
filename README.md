@@ -2,6 +2,8 @@
 
 # Youtube Video:
 
+**https://www.youtube.com/watch?v=cr00PrrGccs**
+
 # Technologies Used:
 
 - React
@@ -17,8 +19,10 @@
 git clone https://github.com/OmarThinks/React-Native-Job-Finder-App
 cd React-Native-Job-Finder-App/Source
 npm install
-npm run android
+npm start
 ```
+
+Then run the application on the android studio while keeping the CLI running.
 
 </b>
 
