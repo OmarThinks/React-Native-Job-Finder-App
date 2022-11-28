@@ -1,23 +1,7 @@
 import React from 'react';
-import {
-  View,
-  ScrollView,
-  SafeAreaView,
-  StyleSheet,
-  Image,
-  Dimensions,
-} from 'react-native';
-import {
-  Card,
-  Text,
-  Paragraph,
-  Button,
-  Avatar,
-  Title,
-  useTheme,
-} from 'react-native-paper';
+import {ScrollView, SafeAreaView, StyleSheet, Image} from 'react-native';
+import {Text, Button, useTheme} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
-import {default as FontAwesome5} from 'react-native-vector-icons/FontAwesome5';
 
 const styles = StyleSheet.create({
   container: {
@@ -63,6 +47,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
   },
   rightArrow: {width: 16.67, height: 10.67},
+  letsGetStartedText: {paddingVertical: 9},
 });
 
 const SplashScreen = () => {
@@ -101,7 +86,7 @@ const SplashScreen = () => {
           onPress={() => {
             navigation.navigate('LogInScreen');
           }}
-          contentStyle={{paddingVertical: 9}}>
+          contentStyle={{...styles.letsGetStartedText}}>
           <Text
             style={{
               color: theme.colors.buttonText,

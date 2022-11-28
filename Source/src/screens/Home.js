@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   Text,
@@ -174,13 +175,14 @@ const HomeRoute = () => {
             ...styles.separator,
             marginTop: 20,
             marginLeft: 20,
-          }}></View>
+          }}
+        />
 
         <ScrollView
           horizontal={true}
           style={{marginTop: 20, paddingRight: 20, paddingBottom: 15}}>
           {displayJobs}
-          <View style={{paddingLeft: 20}}></View>
+          <View style={{paddingLeft: 20}} />
         </ScrollView>
 
         <View

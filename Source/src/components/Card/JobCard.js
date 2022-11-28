@@ -1,6 +1,7 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {Text, useTheme} from 'react-native-paper';
-import {View, Image, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, Image, TouchableOpacity} from 'react-native';
 import {SheetManager} from 'react-native-actions-sheet';
 
 const JobCard = ({job}) => {

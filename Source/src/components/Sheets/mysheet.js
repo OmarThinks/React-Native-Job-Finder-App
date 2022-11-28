@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useEffect, useState} from 'react';
 import ActionSheet, {
   SheetManager,
@@ -177,7 +178,8 @@ function MySheet(props) {
                 marginTop: 10,
                 borderRadius: 10,
                 backgroundColor: theme.colors.sheetTop,
-              }}></View>
+              }}
+            />
 
             <Image
               source={{

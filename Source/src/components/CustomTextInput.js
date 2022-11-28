@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {useTheme, Text, TextInput, HelperText} from 'react-native-paper';
 import {StyleSheet, SafeAreaView, ScrollView, View} from 'react-native';

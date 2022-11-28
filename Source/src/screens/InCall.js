@@ -1,6 +1,13 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {Image, SafeAreaView, TouchableOpacity, View} from 'react-native';
+import {
+  StyleSheet,
+  Image,
+  SafeAreaView,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {Button, Text, useTheme} from 'react-native-paper';
 
 const InCallScreen = () => {
