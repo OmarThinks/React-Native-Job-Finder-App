@@ -14,8 +14,8 @@ import {
 import {SheetProvider} from 'react-native-actions-sheet';
 
 import LogInScreen from './screens/LogIn';
-/*import HomeScreen from './screens/Home';
-import InCallScreen from './screens/InCall';
+import HomeScreen from './screens/Home';
+/*import InCallScreen from './screens/InCall';
 import './components/Sheets/sheets.js';
 */
 const Stack = createNativeStackNavigator();
@@ -59,14 +59,15 @@ const App = () => {
                 component={LogInScreen}
                 options={{ headerShown: false }}
               />
-
-
-              
               <Stack.Screen
                 name="HomeScreen"
                 component={HomeScreen}
                 options={{ headerShown: false }}
               />
+
+
+
+
               <Stack.Screen
                 name="InCallScreen"
                 component={InCallScreen}
@@ -120,12 +121,18 @@ function App() {
                 component={SplashScreen}
                 options={{headerShown: false}}
               />
-
               <Stack.Screen
                 name="LogInScreen"
                 component={LogInScreen}
                 options={{headerShown: false}}
               />
+
+              <Stack.Screen
+                name="HomeScreen"
+                component={HomeScreen}
+                options={{headerShown: false}}
+              />
+
               <Stack.Screen name="Home" component={HomeScreen2} />
             </Stack.Navigator>
           </NavigationContainer>
