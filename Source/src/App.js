@@ -15,9 +15,9 @@ import {SheetProvider} from 'react-native-actions-sheet';
 
 import LogInScreen from './screens/LogIn';
 import HomeScreen from './screens/Home';
-/*import InCallScreen from './screens/InCall';
-import './components/Sheets/sheets.js';
-*/
+import InCallScreen from './screens/InCall';
+//import './components/Sheets/sheets.js';
+
 const Stack = createNativeStackNavigator();
 
 const theme = {
@@ -126,10 +126,15 @@ function App() {
                 component={LogInScreen}
                 options={{headerShown: false}}
               />
-
               <Stack.Screen
                 name="HomeScreen"
                 component={HomeScreen}
+                options={{headerShown: false}}
+              />
+
+              <Stack.Screen
+                name="InCallScreen"
+                component={InCallScreen}
                 options={{headerShown: false}}
               />
 
