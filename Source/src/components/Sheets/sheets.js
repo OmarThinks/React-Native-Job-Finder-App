@@ -1,2 +1,2 @@
-import "./mysheet.js";
+import './mysheet.js';
 export {};

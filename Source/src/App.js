@@ -16,7 +16,7 @@ import {SheetProvider} from 'react-native-actions-sheet';
 import LogInScreen from './screens/LogIn';
 import HomeScreen from './screens/Home';
 import InCallScreen from './screens/InCall';
-//import './components/Sheets/sheets.js';
+import './components/Sheets/sheets.js';
 
 const Stack = createNativeStackNavigator();
 
