@@ -1,20 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
   value: {
     employerImage:
-      "https://www.freepnglogos.com/uploads/spotify-logo-png/file-spotify-logo-png-4.png",
-    employerName: "Spotify",
-    title: "UI Design Lead",
-    salary: "1200",
-    jobType: "Full Time",
-    location: "Toronto, Canada",
+      'https://www.freepnglogos.com/uploads/spotify-logo-png/file-spotify-logo-png-4.png',
+    employerName: 'Spotify',
+    title: 'UI Design Lead',
+    salary: '1200',
+    jobType: 'Full Time',
+    location: 'Toronto, Canada',
     description: {
       qualifications: [
-        "Exceptional communication skills and team working skill",
-        "Creative with an eye for shape and colour",
-        "Know the principal of animation and you can create high prtotypes",
-        "Figma,Xd & Sketch must know about this apps",
+        'Exceptional communication skills and team working skill',
+        'Creative with an eye for shape and colour',
+        'Know the principal of animation and you can create high prtotypes',
+        'Figma,Xd & Sketch must know about this apps',
       ],
     },
     company:
@@ -24,10 +24,10 @@ const initialState = {
 };
 
 export const jobsInfoSlice = createSlice({
-  name: "jobsInfo",
+  name: 'jobsInfo',
   initialState,
 });
 
-export const selectJobsInfo = (state) => state.jobsInfo.value;
+export const selectJobsInfo = state => state.jobsInfo.value;
 
 export default jobsInfoSlice.reducer;

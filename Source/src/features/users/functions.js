@@ -1,6 +1,6 @@
 const validateLogin = (email, password, data) => {
   let toReturn = null;
-  data.forEach((user) => {
+  data.forEach(user => {
     if (user.email === email && user.password === password) {
       toReturn = user;
     }
@@ -8,4 +8,4 @@ const validateLogin = (email, password, data) => {
   return toReturn;
 };
 
-export { validateLogin };
+export {validateLogin};

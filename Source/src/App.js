@@ -1,12 +1,10 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {SafeAreaView} from 'react-native';
 import {store} from './app/store';
 import SplashScreen from './screens/Splash';
 
 import {Provider} from 'react-redux';
-import AwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
 import {
   Provider as PaperProvider,
@@ -79,45 +77,3 @@ const App = () => {
 };
 
 export default App;
-
-/*
-
-function App() {
-  return (
-    <Provider store={store}>
-      <PaperProvider theme={theme}>
-        <SheetProvider>
-          <NavigationContainer>
-            <Stack.Navigator initialRouteName="SplashScreen">
-              <Stack.Screen
-                name="SplashScreen"
-                component={SplashScreen}
-                options={{headerShown: false}}
-              />
-              <Stack.Screen
-                name="LogInScreen"
-                component={LogInScreen}
-                options={{headerShown: false}}
-              />
-              <Stack.Screen
-                name="HomeScreen"
-                component={HomeScreen}
-                options={{headerShown: false}}
-              />
-
-              <Stack.Screen
-                name="InCallScreen"
-                component={InCallScreen}
-                options={{headerShown: false}}
-              />
-            </Stack.Navigator>
-          </NavigationContainer>
-        </SheetProvider>
-      </PaperProvider>
-    </Provider>
-  );
-}
-
-
-export default App;
-*/

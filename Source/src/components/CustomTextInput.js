@@ -1,6 +1,7 @@
-import { useTheme, Text, TextInput, HelperText } from "react-native-paper";
-import { StyleSheet, SafeAreaView, ScrollView, View } from "react-native";
-import { useState } from "react";
+import React from 'react';
+import {useTheme, Text, TextInput, HelperText} from 'react-native-paper';
+import {StyleSheet, SafeAreaView, ScrollView, View} from 'react-native';
+import {useState} from 'react';
 
 const CustomTextInput = ({
   text,
@@ -31,8 +32,8 @@ const CustomTextInput = ({
         ...theme,
         roundness: 16,
       }}
-      underlineStyle={{ height: 0 }}
-      mode={"flat"}
+      underlineStyle={{height: 0}}
+      mode={'flat'}
       textColor={theme.colors.onSurface}
       left={left}
       right={right}

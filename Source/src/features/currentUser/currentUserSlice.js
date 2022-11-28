@@ -1,11 +1,11 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
   value: null,
 };
 
 export const currentUserSlice = createSlice({
-  name: "currentUser",
+  name: 'currentUser',
   initialState,
   reducers: {
     update: (state, action) => {
@@ -14,8 +14,8 @@ export const currentUserSlice = createSlice({
   },
 });
 
-export const { update } = currentUserSlice.actions;
+export const {update} = currentUserSlice.actions;
 
-export const selectCurrentUser = (state) => state.currentUser.value;
+export const selectCurrentUser = state => state.currentUser.value;
 
 export default currentUserSlice.reducer;

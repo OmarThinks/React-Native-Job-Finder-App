@@ -1,3 +1,4 @@
+import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {Image, SafeAreaView, TouchableOpacity, View} from 'react-native';
 import {Button, Text, useTheme} from 'react-native-paper';
