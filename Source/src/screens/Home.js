@@ -6,8 +6,8 @@ import {
   BottomNavigation,
   MD3LightTheme,
   Button,
-} from "react-native-paper";
-import { useNavigation } from "@react-navigation/native";
+} from 'react-native-paper';
+import {useNavigation} from '@react-navigation/native';
 import {
   SafeAreaView,
   ScrollView,
@@ -15,18 +15,18 @@ import {
   View,
   Image,
   FlatList,
-} from "react-native";
-import { useSelector } from "react-redux";
-import { selectCurrentUser } from "../features/currentUser/currentUserSlice";
-import { useEffect, useState } from "react";
-import usersSlice from "../features/users/usersSlice";
-import PostCard from "../components/Card/PostCard";
-import { selectPosts } from "../features/posts/postsSlice";
+} from 'react-native';
+import {useSelector} from 'react-redux';
+import {selectCurrentUser} from '../features/currentUser/currentUserSlice';
+import {useEffect, useState} from 'react';
+import usersSlice from '../features/users/usersSlice';
+import PostCard from '../components/Card/PostCard';
+import {selectPosts} from '../features/posts/postsSlice';
 
-import JobCard from "../components/Card/JobCard";
-import { selectJobs } from "../features/jobs/jobsSlice";
+import JobCard from '../components/Card/JobCard';
+import {selectJobs} from '../features/jobs/jobsSlice';
 
-import { SheetManager } from "react-native-actions-sheet";
+import {SheetManager} from 'react-native-actions-sheet';
 
 const styles = StyleSheet.create({
   container: {
@@ -34,14 +34,14 @@ const styles = StyleSheet.create({
   },
   placeholderContainer: {
     flex: 1,
-    justifyContent: "space-around",
-    alignItems: "center",
-    paddingVertical: "10%",
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    paddingVertical: '10%',
   },
   separator: {
-    display: "flex",
-    justifyContent: "space-between",
-    flexDirection: "row",
+    display: 'flex',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
   },
   inputText: {
     flexGrow: 1,
@@ -63,9 +63,9 @@ const styles = StyleSheet.create({
   popularJob: {
     fontSize: 20,
     lineHeight: 20,
-    fontWeight: "600",
+    fontWeight: '600',
   },
-  navBarIcon: { width: 19, height: 20, backgroundColor: "transparent" },
+  navBarIcon: {width: 19, height: 20, backgroundColor: 'transparent'},
 });
 
 const HomeRoute = () => {
@@ -95,29 +95,27 @@ const HomeRoute = () => {
     <></>
   );
 
-  const displayPosts = posts.map((post) => {
+  const displayPosts = posts.map(post => {
     return <PostCard key={post.id} post={post} />;
   });
 
-  const displayJobs = jobs.map((job) => {
+  const displayJobs = jobs.map(job => {
     return <JobCard key={job.id} job={job} />;
   });
 
   return (
     <SafeAreaView
-      style={{ backgroundColor: theme.colors.background2, ...styles.container }}
-    >
+      style={{backgroundColor: theme.colors.background2, ...styles.container}}>
       <ScrollView>
         <View
           style={{
             ...styles.separator,
             marginTop: 40,
             marginHorizontal: 20,
-          }}
-        >
+          }}>
           <Image
-            source={require("../shapes/HomeTopLeftIcon.png")}
-            style={{ ...styles.image44 }}
+            source={require('../shapes/HomeTopLeftIcon.png')}
+            style={{...styles.image44}}
           />
           {userImage}
         </View>
@@ -127,22 +125,21 @@ const HomeRoute = () => {
             ...styles.separator,
             marginTop: 30,
             marginHorizontal: 20,
-          }}
-        >
+          }}>
           <TextInput
-            label={"Search Here ..."}
+            label={'Search Here ...'}
             style={{
               ...styles.inputText,
               backgroundColor: theme.colors.background,
               borderRadius: 15,
             }}
-            theme={{ ...theme, roundness: 15 }}
-            underlineStyle={{ height: 0 }}
+            theme={{...theme, roundness: 15}}
+            underlineStyle={{height: 0}}
             textColor={theme.colors.primaryText}
           />
           <Image
-            source={require("../shapes/HomeSettingsIcon.png")}
-            style={{ ...styles.image54 }}
+            source={require('../shapes/HomeSettingsIcon.png')}
+            style={{...styles.image54}}
           />
         </View>
 
@@ -151,25 +148,22 @@ const HomeRoute = () => {
             ...styles.separator,
             marginTop: 30,
             marginHorizontal: 20,
-          }}
-        >
+          }}>
           <Text
             style={{
               ...styles.popularJob,
               color: theme.colors.primaryText,
-            }}
-          >
+            }}>
             Popular Jobs
           </Text>
           <Text
             style={{
               fontSize: 12,
               lineHeight: 12,
-              fontWeight: "400",
+              fontWeight: '400',
               color: theme.colors.secondaryText,
-              alignSelf: "center",
-            }}
-          >
+              alignSelf: 'center',
+            }}>
             Show All
           </Text>
         </View>
@@ -179,15 +173,13 @@ const HomeRoute = () => {
             ...styles.separator,
             marginTop: 20,
             marginLeft: 20,
-          }}
-        ></View>
+          }}></View>
 
         <ScrollView
           horizontal={true}
-          style={{ marginTop: 20, paddingRight: 20, paddingBottom: 15 }}
-        >
+          style={{marginTop: 20, paddingRight: 20, paddingBottom: 15}}>
           {displayJobs}
-          <View style={{ paddingLeft: 20 }}></View>
+          <View style={{paddingLeft: 20}}></View>
         </ScrollView>
 
         <View
@@ -195,30 +187,27 @@ const HomeRoute = () => {
             ...styles.separator,
             marginTop: 15,
             marginHorizontal: 20,
-          }}
-        >
+          }}>
           <Text
             style={{
               ...styles.popularJob,
               color: theme.colors.primaryText,
-            }}
-          >
+            }}>
             Recent Post
           </Text>
           <Text
             style={{
               fontSize: 12,
               lineHeight: 12,
-              fontWeight: "400",
+              fontWeight: '400',
               color: theme.colors.secondaryText,
-              alignSelf: "center",
-            }}
-          >
+              alignSelf: 'center',
+            }}>
             Show All
           </Text>
         </View>
 
-        <View style={{ marginHorizontal: 20, marginTop: 20, marginBottom: 20 }}>
+        <View style={{marginHorizontal: 20, marginTop: 20, marginBottom: 20}}>
           {displayPosts}
         </View>
       </ScrollView>
@@ -233,9 +222,8 @@ const MessageRoute = () => {
       style={{
         ...styles.placeholderContainer,
         backgroundColor: theme.colors.background2,
-      }}
-    >
-      <Text style={{ fontSize: 35 }}>Message</Text>
+      }}>
+      <Text style={{fontSize: 35}}>Message</Text>
       <ChatActive size={40} />
       <ChatIdle size={40} />
     </View>
@@ -250,9 +238,8 @@ const ProfileRoute = () => {
       style={{
         ...styles.placeholderContainer,
         backgroundColor: theme.colors.background2,
-      }}
-    >
-      <Text style={{ fontSize: 35 }}>Message</Text>
+      }}>
+      <Text style={{fontSize: 35}}>Message</Text>
       <ProfileActive size={40} />
       <ProfileIdle size={40} />
     </View>
@@ -267,97 +254,96 @@ const SettingsRoute = () => {
       style={{
         ...styles.placeholderContainer,
         backgroundColor: theme.colors.background2,
-      }}
-    >
-      <Text style={{ fontSize: 35 }}>Message</Text>
+      }}>
+      <Text style={{fontSize: 35}}>Message</Text>
       <SettingActive size={40} />
       <SettingIdle size={40} />
     </View>
   );
 };
 
-const HomeActive = ({ size }) => {
-  const more = size ? { width: size, height: size } : {};
+const HomeActive = ({size}) => {
+  const more = size ? {width: size, height: size} : {};
   return (
     <Image
-      source={require("../shapes/NavBar/HomeActive.png")}
-      style={{ ...styles.navBarIcon, ...more }}
+      source={require('../shapes/NavBar/HomeActive.png')}
+      style={{...styles.navBarIcon, ...more}}
       resizeMode="contain"
     />
   );
 };
 
-const HomeIdle = ({ size }) => {
-  const more = size ? { width: size, height: size } : {};
+const HomeIdle = ({size}) => {
+  const more = size ? {width: size, height: size} : {};
   return (
     <Image
-      source={require("../shapes/NavBar/HomeIdle.png")}
-      style={{ ...styles.navBarIcon, ...more }}
+      source={require('../shapes/NavBar/HomeIdle.png')}
+      style={{...styles.navBarIcon, ...more}}
     />
   );
 };
 
-const ChatActive = ({ size }) => {
-  const more = size ? { width: size, height: size } : {};
+const ChatActive = ({size}) => {
+  const more = size ? {width: size, height: size} : {};
   return (
     <Image
-      source={require("../shapes/NavBar/ChatActive.png")}
-      style={{ ...styles.navBarIcon, ...more }}
+      source={require('../shapes/NavBar/ChatActive.png')}
+      style={{...styles.navBarIcon, ...more}}
       resizeMode="contain"
     />
   );
 };
 
-const ChatIdle = ({ size }) => {
-  const more = size ? { width: size, height: size } : {};
+const ChatIdle = ({size}) => {
+  const more = size ? {width: size, height: size} : {};
   return (
     <Image
-      source={require("../shapes/NavBar/ChatIdle.png")}
-      style={{ ...styles.navBarIcon, ...more }}
+      source={require('../shapes/NavBar/ChatIdle.png')}
+      style={{...styles.navBarIcon, ...more}}
       resizeMode="contain"
     />
   );
 };
 
-const ProfileActive = ({ size }) => {
-  const more = size ? { width: size, height: size } : {};
+const ProfileActive = ({size}) => {
+  const more = size ? {width: size, height: size} : {};
   return (
     <Image
-      source={require("../shapes/NavBar/ProfileActive.png")}
-      style={{ ...styles.navBarIcon, ...more }}
+      source={require('../shapes/NavBar/ProfileActive.png')}
+      style={{...styles.navBarIcon, ...more}}
       resizeMode="contain"
     />
   );
 };
 
-const ProfileIdle = ({ size }) => {
-  const more = size ? { width: size, height: size } : {};
+const ProfileIdle = ({size}) => {
+  const more = size ? {width: size, height: size} : {};
   return (
     <Image
-      source={require("../shapes/NavBar/ProfileIdle.png")}
-      style={{ ...styles.navBarIcon, ...more }}
+      source={require('../shapes/NavBar/ProfileIdle.png')}
+      style={{...styles.navBarIcon, ...more}}
       resizeMode="contain"
     />
   );
 };
 
-const SettingActive = ({ size }) => {
-  const more = size ? { width: size, height: size } : {};
+const SettingActive = ({size}) => {
+  const more = size ? {width: size, height: size} : {};
   return (
     <Image
-      source={require("../shapes/NavBar/SettingActive.png")}
-      style={{ ...styles.navBarIcon, ...more }}
+      source={require('../shapes/NavBar/SettingActive.png')}
+      style={{...styles.navBarIcon, ...more}}
       resizeMode="contain"
     />
   );
 };
 
-const SettingIdle = ({ size }) => {
-  const more = size ? { width: size, height: size } : {};
+const SettingIdle = ({size}) => {
+  const more = size ? {width: size, height: size} : {};
   return (
     <Image
-      source={require("../shapes/NavBar/SettingIdle.png")}
-      style={{ ...styles.navBarIcon, ...more }}
+      source={require('../shapes/NavBar/SettingIdle.png')}
+      style={{...styles.navBarIcon, ...more}}
       resizeMode="contain"
     />
   );
@@ -368,29 +354,29 @@ const HomeScreen = () => {
 
   const [routes] = useState([
     {
-      key: "home",
-      title: "Home",
+      key: 'home',
+      title: 'Home',
       focusedIcon: HomeActive,
       unfocusedIcon: HomeIdle,
       badge: false,
     },
     {
-      key: "message",
-      title: "Message",
+      key: 'message',
+      title: 'Message',
       focusedIcon: ChatActive,
       unfocusedIcon: ChatIdle,
       badge: false,
     },
     {
-      key: "profile",
-      title: "Profile",
+      key: 'profile',
+      title: 'Profile',
       focusedIcon: ProfileActive,
       unfocusedIcon: ProfileIdle,
       badge: false,
     },
     {
-      key: "settings",
-      title: "Settings",
+      key: 'settings',
+      title: 'Settings',
       focusedIcon: SettingActive,
       unfocusedIcon: SettingIdle,
       badge: false,
@@ -406,10 +392,10 @@ const HomeScreen = () => {
 
   return (
     <BottomNavigation
-      navigationState={{ index, routes }}
+      navigationState={{index, routes}}
       onIndexChange={setIndex}
       renderScene={renderScene}
-      barStyle={{ backgroundColor: theme.colors.background }}
+      barStyle={{backgroundColor: theme.colors.background}}
       theme={{
         ...theme,
         colors: {
