@@ -13,9 +13,8 @@ import {
 } from 'react-native-paper';
 import {SheetProvider} from 'react-native-actions-sheet';
 
-/*
 import LogInScreen from './screens/LogIn';
-import HomeScreen from './screens/Home';
+/*import HomeScreen from './screens/Home';
 import InCallScreen from './screens/InCall';
 import './components/Sheets/sheets.js';
 */
@@ -60,6 +59,9 @@ const App = () => {
                 component={LogInScreen}
                 options={{ headerShown: false }}
               />
+
+
+              
               <Stack.Screen
                 name="HomeScreen"
                 component={HomeScreen}
@@ -116,6 +118,12 @@ function App() {
               <Stack.Screen
                 name="SplashScreen"
                 component={SplashScreen}
+                options={{headerShown: false}}
+              />
+
+              <Stack.Screen
+                name="LogInScreen"
+                component={LogInScreen}
                 options={{headerShown: false}}
               />
               <Stack.Screen name="Home" component={HomeScreen2} />
