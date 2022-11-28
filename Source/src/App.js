@@ -6,6 +6,7 @@ import {store} from './app/store';
 import SplashScreen from './screens/Splash';
 
 import {Provider} from 'react-redux';
+import AwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
 import {
   Provider as PaperProvider,
@@ -41,7 +42,6 @@ const theme = {
   },
 };
 
-/*
 const App = () => {
   return (
     <Provider store={store}>
@@ -52,26 +52,23 @@ const App = () => {
               <Stack.Screen
                 name="SplashScreen"
                 component={SplashScreen}
-                options={{ headerShown: false }}
+                options={{headerShown: false}}
               />
               <Stack.Screen
                 name="LogInScreen"
                 component={LogInScreen}
-                options={{ headerShown: false }}
+                options={{headerShown: false}}
               />
               <Stack.Screen
                 name="HomeScreen"
                 component={HomeScreen}
-                options={{ headerShown: false }}
+                options={{headerShown: false}}
               />
-
-
-
 
               <Stack.Screen
                 name="InCallScreen"
                 component={InCallScreen}
-                options={{ headerShown: false }}
+                options={{headerShown: false}}
               />
             </Stack.Navigator>
           </NavigationContainer>
@@ -83,31 +80,7 @@ const App = () => {
 
 export default App;
 
-*/
-import {
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-function HomeScreen2() {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
+/*
 
 function App() {
   return (
@@ -137,8 +110,6 @@ function App() {
                 component={InCallScreen}
                 options={{headerShown: false}}
               />
-
-              <Stack.Screen name="Home" component={HomeScreen2} />
             </Stack.Navigator>
           </NavigationContainer>
         </SheetProvider>
@@ -147,4 +118,6 @@ function App() {
   );
 }
 
+
 export default App;
+*/
