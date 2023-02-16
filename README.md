@@ -36,7 +36,7 @@ Figma Design Link: https://www.figma.com/file/MhW5fBvYX41AITpgRwFDzc/React-Devel
 <img src="Media/Design/04.png" width=300>
 <img src="Media/Design/05.png" width=300>
 
-# ScreenShots:
+# My Implementation:
 
 <img src="Media/ScreenShots/01.png" width=300>
 <img src="Media/ScreenShots/02.png" width=300>
